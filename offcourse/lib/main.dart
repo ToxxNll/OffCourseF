@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:offcourse/pages/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +25,6 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: Container());
+        home: WelcomePage());
   }
 }
