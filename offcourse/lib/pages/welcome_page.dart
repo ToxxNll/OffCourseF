@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:offcourse/widgets/applarge_text.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -50,7 +51,10 @@ class _WelcomePageState extends State<WelcomePage> {
                             height: MediaQuery.of(context).size.width * 0.2,
                             child: ElevatedButton(
                               onPressed: () {},
-                              child: Text("Каталог"),
+                              child: AppLargreText(
+                                text: "Каталог",
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
@@ -60,7 +64,10 @@ class _WelcomePageState extends State<WelcomePage> {
                             height: MediaQuery.of(context).size.width * 0.2,
                             child: ElevatedButton(
                               onPressed: () {},
-                              child: Text("Войти"),
+                              child: AppLargreText(
+                                text: "Войти",
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         )
