@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:offcourse/widgets/applarge_text.dart';
+import 'package:offcourse/widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -13,6 +14,8 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var deviceSize = MediaQuery.of(context).size.width;
+
     return Scaffold(
       // bottomNavigationBar: Row(children: [
       //   Column(
@@ -48,32 +51,36 @@ class _WelcomePageState extends State<WelcomePage> {
                       children: [
                         Expanded(
                           child: Container(
-                            height: MediaQuery.of(context).size.width * 0.2,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: AppLargreText(
+                              height: MediaQuery.of(context).size.width * 0.2,
+                              child: ResponsiveButton(
+                                width: MediaQuery.of(context).size.width * 0.20,
+                                height:
+                                    MediaQuery.of(context).size.width * 0.20,
                                 text: "Каталог",
-                                color: Colors.white,
+                              )
+                              // child: ElevatedButton(
+                              //   onPressed: () {},
+                              //   child: AppLargreText(
+                              //     text: "Каталог",
+                              //     color: Colors.white,
+                              //   ),
+                              // ),
                               ),
-                            ),
-                          ),
                         ),
                         Expanded(
-                          child: Container(
-                            padding: EdgeInsets.only(left: 8.0),
-                            height: MediaQuery.of(context).size.width * 0.2,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: AppLargreText(
-                                text: "Войти",
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        )
+                            child: Container(
+                                height: MediaQuery.of(context).size.width * 0.2,
+                                child: ResponsiveButton(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.20,
+                                  height:
+                                      MediaQuery.of(context).size.width * 0.20,
+                                  text: "Войти",
+                                )))
                       ],
                     ),
                   ))
+
               // Container(
               //     child: Row(
               //         mainAxisAlignment: MainAxisAlignment.center,
