@@ -46,12 +46,12 @@ class _WelcomePageState extends State<WelcomePage> {
               child: Visibility(
                   visible: (index == images.length - 1),
                   child: Container(
-                    height: MediaQuery.of(context).size.width * 0.20,
+                    height: MediaQuery.of(context).size.height * 0.08,
                     child: Row(
                       children: [
                         Expanded(
                           child: Container(
-                              height: MediaQuery.of(context).size.width * 0.2,
+                              height: MediaQuery.of(context).size.height * 0.8,
                               child: ResponsiveButton(
                                 width: MediaQuery.of(context).size.width * 0.20,
                                 height:
@@ -69,7 +69,8 @@ class _WelcomePageState extends State<WelcomePage> {
                         ),
                         Expanded(
                             child: Container(
-                                height: MediaQuery.of(context).size.width * 0.2,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.1,
                                 child: ResponsiveButton(
                                   width:
                                       MediaQuery.of(context).size.width * 0.20,
