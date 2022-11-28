@@ -3,7 +3,6 @@ import 'package:offcourse/additional/colors.dart';
 import 'package:offcourse/pages/nav_pages/catalog_page.dart';
 import 'package:offcourse/pages/nav_pages/my_courses.dart';
 import 'package:offcourse/pages/nav_pages/profile.dart';
-import 'package:offcourse/widgets/bottom_bar.dart';
 
 import 'home_page.dart';
 
