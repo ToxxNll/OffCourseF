@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:offcourse/additional/colors.dart';
+import 'package:offcourse/pages/nav_pages/catalog_page.dart';
+import 'package:offcourse/pages/nav_pages/home_page.dart';
+import 'package:offcourse/pages/nav_pages/main_page.dart';
+import 'package:offcourse/pages/nav_pages/my_courses.dart';
+import 'package:offcourse/pages/nav_pages/profile.dart';
 import 'package:offcourse/pages/welcome_page.dart';
 
 void main() {
@@ -7,7 +13,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -25,6 +30,6 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: WelcomePage());
+        home: MainPage());
   }
 }
