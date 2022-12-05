@@ -29,6 +29,13 @@
             {
               "client_id": "71337050623-d604m8rsdbqnahe8pg3iaarbv6nnp290.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "71337050623-1b09ihegbaalgvtda6jqt1997dskh61s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.offcourse"
+              }
             }
           ]
         }
