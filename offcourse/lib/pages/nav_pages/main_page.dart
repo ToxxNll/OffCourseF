@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:offcourse/additional/colors.dart';
+import 'package:offcourse/pages/authentification/authentificate.dart';
+import 'package:offcourse/pages/authentification/login_page.dart';
 import 'package:offcourse/pages/nav_pages/catalog_page.dart';
 import 'package:offcourse/pages/nav_pages/my_courses.dart';
 import 'package:offcourse/pages/nav_pages/profile.dart';
@@ -20,7 +22,9 @@ class _MainPageState extends State<MainPage> {
     HomePage(),
     CatalogPage(),
     MyCoursesPage(),
-    ProfilePage(),
+    Authentificate(),
+    // Условия перехода на страницу профиля если юзер залогинин
+    // ProfilePage(),
   ];
 
   void onItem_Tapped(int index) {
