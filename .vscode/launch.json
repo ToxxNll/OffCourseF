@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "offcourse",
+            "cwd": "offcourse",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "offcourse (profile mode)",
+            "cwd": "offcourse",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "offcourse (release mode)",
+            "cwd": "offcourse",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
