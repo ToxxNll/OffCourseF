@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:offcourse/pages/admin_panel/admin_page.dart';
 import 'package:offcourse/pages/admin_panel/admin_panel.dart';
+import 'package:offcourse/pages/admin_panel/manage_courses.dart';
+import 'package:offcourse/pages/admin_panel/manage_users.dart';
 import 'firebase_options.dart';
 import 'package:offcourse/additional/colors.dart';
 import 'package:offcourse/pages/nav_pages/catalog_page.dart';
@@ -39,6 +41,10 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
+        routes: {
+          ManageUsers.id: (context) => ManageUsers(),
+          ManageCourses.id: (context) => ManageCourses(),
+        },
         home: const AdminPanel());
     // home: MainPage());
   }

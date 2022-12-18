@@ -85,6 +85,7 @@ class _CatalogPageState extends State<CatalogPage>
               height: MediaQuery.of(context).size.height - 50.0,
               width: double.infinity,
               child: TabBarView(controller: _tabController, children: [
+                //Тут категорий которые в таббере горизонтальном
                 CoursePage(),
                 CoursePage(),
                 CoursePage(),
