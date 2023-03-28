@@ -1,115 +1,159 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:offcourse/models/course.dart';
 import '../additional/colors.dart';
 import 'course_details.dart';
 
 class CoursePage extends StatelessWidget {
+  final CourseController courseController = CourseController();
+  Future<List<CourseModel>> courses = CourseController().getCourses();
+  late CourseModel course;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFCFAF8),
-      body: ListView(children: <Widget>[
-        StreamBuilder<QuerySnapshot>(
-            stream:
-                FirebaseFirestore.instance.collection("Courses").snapshots(),
-            builder:
-                (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-              if (snapshot.hasData) {
-                final snap = snapshot.data!.docs;
+      body: FutureBuilder<List<CourseModel>>(
+        future: courseController.getCourses(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            List<CourseModel> courses = snapshot.data!;
 
-                return Container(
-                    padding: EdgeInsets.only(right: 15.0),
-                    width: MediaQuery.of(context).size.width - 30.0,
-                    height: MediaQuery.of(context).size.height - 50.0,
-                    child: GridView.count(
-                      crossAxisCount: 2,
-                      primary: false,
-                      crossAxisSpacing: 10.0,
-                      mainAxisSpacing: 15.0,
-                      childAspectRatio: 0.8,
-                      children: <Widget>[
-                        ListView.builder(
-                          padding: EdgeInsets.only(
-                              top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
-                          itemCount: snap.length,
-                          itemBuilder: (context, index) {
-                            return _buildCard(
-                                snap[index]['name'],
-                                snap[index]['teacher'],
-                                snap[index]['img'],
-                                snap[index]['added'],
-                                snap[index]['isFavourite'],
-                                context);
-                          },
-                        )
-                      ],
-                    ));
-              } else {
-                return const SizedBox();
-              }
-            })
-      ]),
+            return Container(
+              padding: EdgeInsets.only(right: 15.0),
+              width: MediaQuery.of(context).size.width - 30.0,
+              height: MediaQuery.of(context).size.height - 50.0,
+              child: GridView.count(
+                crossAxisCount: 2,
+                primary: false,
+                crossAxisSpacing: 10.0,
+                mainAxisSpacing: 15.0,
+                childAspectRatio: 0.8,
+                children: List.generate(courses.length, (index) {
+                  CourseModel course = courses[index];
+                  return _buildCard(
+                    course.name,
+                    course.teacher,
+                    course.img,
+                    course.added,
+                    course.isFavourite,
+                    context,
+                  );
+                }),
+              ),
+            );
+          } else if (snapshot.hasError) {
+            throw snapshot.error!;
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
+      ),
     );
-  }
-  //   body: ListView(
-  //     children: <Widget>[
-  //       SizedBox(height: 15.0),
-  //       Container(
-  //           padding: EdgeInsets.only(right: 15.0),
-  //           width: MediaQuery.of(context).size.width - 30.0,
-  //           height: MediaQuery.of(context).size.height - 50.0,
-  //           child: GridView.count(
-  //             crossAxisCount: 2,
-  //             primary: false,
-  //             crossAxisSpacing: 10.0,
-  //             mainAxisSpacing: 15.0,
-  //             childAspectRatio: 0.8,
-  //             children: <Widget>[
-  //               StreamBuilder<QuerySnapshot>(
-  //                   stream: FirebaseFirestore.instance
-  //                       .collection("Courses")
-  //                       .snapshots(),
-  //                   builder: (BuildContext context,
-  //                       AsyncSnapshot<QuerySnapshot> snapshot) {
-  //                     if (snapshot.hasData) {
-  //                       final snap = snapshot.data!.docs;
 
-  //                       return ListView.builder(
-  //                         padding: EdgeInsets.only(
-  //                             top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
-  //                         itemCount: snap.length,
-  //                         itemBuilder: (context, index) {
-  //                           return _buildCard(
-  //                               snap[index]['name'],
-  //                               snap[index]['teacher'],
-  //                               snap[index]['img'],
-  //                               snap[index]['added'],
-  //                               snap[index]['isFavourite'],
-  //                               context);
-  //                         },
-  //                       );
-  //                     } else {
-  //                       return const SizedBox();
-  //                     }
-  //                   })
-  //               // _buildCard('Course Sample', 'Teacher1',
-  //               //     'img/course_sample.jpg', false, false, context),
-  //               // _buildCard('Course Sample1', 'Teacher2',
-  //               //     'img/course_sample.jpg', false, false, context),
-  //               // _buildCard('Course Sample2', 'Teacher3',
-  //               //     'img/course_sample.jpg', false, false, context),
-  //               // _buildCard('Course Sample3', 'Teacher4',
-  //               //     'img/course_sample.jpg', false, false, context)
-  //             ],
-  //           )),
-  //       SizedBox(height: 15.0)
-  //     ],
-  //   ),
-  // );
+    // Widget build(BuildContext context) {
+    //   return Scaffold(
+    //       backgroundColor: Color(0xFFFCFAF8),
+    //       body: FutureBuilder<List<CourseModel>>(
+    //           future: courseController.getCourses(),
+    //           builder: (context, snapshot) {
+    //             if (snapshot.hasData) {
+    //               List<CourseModel> courses = snapshot.data!;
+
+    //               return ListView.builder(
+    //                   itemCount: courses.length,
+    //                   itemBuilder: (context, index) {
+    //                     CourseModel course = courses[index];
+    //                     return Container(
+    //                         padding: EdgeInsets.only(right: 15.0),
+    //                         width: MediaQuery.of(context).size.width - 30.0,
+    //                         height: MediaQuery.of(context).size.height - 50.0,
+    //                         child: GridView.count(
+    //                           crossAxisCount: 2,
+    //                           primary: false,
+    //                           crossAxisSpacing: 10.0,
+    //                           mainAxisSpacing: 15.0,
+    //                           childAspectRatio: 0.8,
+    //                           children: List.generate(courses.length, (index) {
+    //                             return _buildCard(
+    //                                 courses[index].name,
+    //                                 courses[index].teacher,
+    //                                 courses[index].img,
+    //                                 courses[index].added,
+    //                                 courses[index].isFavourite,
+    //                                 context);
+    //                           }),
+    //                         ));
+    //                   });
+    //             } else if (snapshot.hasError) {
+    //               throw snapshot.error!;
+    //             } else {
+    //               return Center(CircularProgressIndicator());
+    //             }
+    //           }));
+  }
+
+// return
+// ListView(
+//   children: <Widget>[
+//     SizedBox(height: 15.0),
+//     Container(
+//         padding: EdgeInsets.only(right: 15.0),
+//         width: MediaQuery.of(context).size.width - 30.0,
+//         height: MediaQuery.of(context).size.height - 50.0,
+//         child: GridView.count(
+//           crossAxisCount: 2,
+//           primary: false,
+//           crossAxisSpacing: 10.0,
+//           mainAxisSpacing: 15.0,
+//           childAspectRatio: 0.8,
+//           children: <Widget>[
+//             StreamBuilder<QuerySnapshot>(
+//                 stream: FirebaseFirestore.instance
+//                     .collection("Courses")
+//                     .snapshots(),
+//                 builder: (BuildContext context,
+//                     AsyncSnapshot<QuerySnapshot> snapshot) {
+//                   if (snapshot.hasData) {
+//                     final snap = snapshot.data!.docs;
+
+//                     return ListView.builder(
+//                       padding: EdgeInsets.only(
+//                           top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
+//                       itemCount: snap.length,
+//                       itemBuilder: (context, index) {
+//                         return _buildCard(
+//                             snap[index]['name'],
+//                             snap[index]['teacher'],
+//                             snap[index]['img'],
+//                             snap[index]['added'],
+//                             snap[index]['isFavourite'],
+//                             context);
+//                       },
+//                     );
+//                   } else {
+//                     return const SizedBox();
+//                   }
+//                 })
+//             // _buildCard('Course Sample', 'Teacher1',
+//             //     'img/course_sample.jpg', false, false, context),
+//             // _buildCard('Course Sample1', 'Teacher2',
+//             //     'img/course_sample.jpg', false, false, context),
+//             // _buildCard('Course Sample2', 'Teacher3',
+//             //     'img/course_sample.jpg', false, false, context),
+//             // _buildCard('Course Sample3', 'Teacher4',
+//             //     'img/course_sample.jpg', false, false, context)
+//           ],
+//         )),
+//     SizedBox(height: 15.0)
+//   ],
+// );
 
   Widget _buildCard(String name, String teacher, String imgPath, bool added,
-      bool isFavorite, context) {
+      bool isFavourite, context) {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
@@ -134,7 +178,7 @@ class CoursePage extends StatelessWidget {
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            isFavorite
+                            isFavourite
                                 ? Icon(Icons.favorite_border,
                                     color: AppColors.mainColor)
                                 : Icon(Icons.favorite,
