@@ -41,6 +41,8 @@ dependencies:
   cloud_firestore: ^4.1.0
   flutter_admin_scaffold: ^1.1.2
   responsive_table: ^0.2.0+2
+  get: ^4.6.5
+  firebase_database: ^10.0.14
 
 dev_dependencies:
   flutter_test:
