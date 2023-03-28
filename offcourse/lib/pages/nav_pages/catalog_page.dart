@@ -29,7 +29,7 @@ class _CatalogPageState extends State<CatalogPage>
           icon: Icon(Icons.arrow_back, color: Color(0xFF545D68)),
           onPressed: () {},
         ),
-        title: Text('cook',
+        title: Text('Courses',
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
