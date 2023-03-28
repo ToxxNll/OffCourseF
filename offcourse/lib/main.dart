@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
           ManageUsers.id: (context) => ManageUsers(),
           ManageCourses.id: (context) => ManageCourses(),
         },
-        home: const AdminPanel());
+        home: const MainPage());
     // home: MainPage());
   }
 }
