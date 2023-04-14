@@ -1,9 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:offcourse/additional/colors.dart';
+
+import '../../models/user.dart';
 
 class SignUpPage extends StatefulWidget {
   final VoidCallback showLogin;
@@ -18,12 +21,41 @@ class _SignUpState extends State<SignUpPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  final _nameController = TextEditingController();
 
-  Future singUp() async {
+  Future<void> singUp() async {
+    if (_nameController.text.trim().isEmpty) {
+      print('Please enter your name.');
+      return;
+    }
+
     if (passwordConfirmed()) {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      try {
+        final authResult =
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: _emailController.text.trim(),
-          password: _passwordController.text.trim());
+          password: _passwordController.text.trim(),
+        );
+
+        final user = UserModel(
+          authResult.user!.uid,
+          authResult.user!.email!,
+          _nameController.text.trim(),
+          false,
+        );
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.id)
+            .set(user.toMap());
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'weak-password') {
+          print('The password provided is too weak.');
+        } else if (e.code == 'email-already-in-use') {
+          print('The account already exists for that email.');
+        }
+      } catch (e) {
+        print(e);
+      }
     }
   }
 
@@ -42,6 +74,7 @@ class _SignUpState extends State<SignUpPage> {
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
+    _nameController.dispose();
     super.dispose();
   }
 
@@ -67,7 +100,32 @@ class _SignUpState extends State<SignUpPage> {
                       fontFamily: 'Varela',
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold)),
+
               SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: TextFormField(
+                  controller: _nameController,
+                  // validator: (value) {
+                  //   if (value!.isEmpty) {
+                  //     return 'Please enter your name';
+                  //   }
+                  //   return null;
+                  // },
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: AppColors.mainColor),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    hintText: 'Name',
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
 
               //Для начала пользуемся почтой , в дальнейшем правильнее выглядит номер телефона
               Padding(

@@ -43,6 +43,8 @@ dependencies:
   responsive_table: ^0.2.0+2
   get: ^4.6.5
   firebase_database: ^10.0.14
+  awesome_card: ^1.1.7
+  
 
 dev_dependencies:
   flutter_test:

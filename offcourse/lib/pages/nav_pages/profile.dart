@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:offcourse/additional/colors.dart';
@@ -12,8 +12,32 @@ class ProfilePage extends StatefulWidget {
   State<ProfilePage> createState() => _ProfilePageState();
 }
 
+Future<String?> _getUserName() async {
+  final User? user = FirebaseAuth.instance.currentUser;
+  if (user != null) {
+    final CollectionReference users =
+        FirebaseFirestore.instance.collection('users');
+    final DocumentSnapshot userDoc = await users.doc(user.uid).get();
+    final String? userName = userDoc.get('name');
+    return userName;
+  }
+  return null;
+}
+
 class _ProfilePageState extends State<ProfilePage> {
-  final user = FirebaseAuth.instance.currentUser!;
+  final User? user = FirebaseAuth.instance.currentUser!;
+
+  // @override
+  // Future<void> initState() async {
+  //   super.initState();
+  //   if (user != null) {
+  //     final CollectionReference users =
+  //         FirebaseFirestore.instance.collection('users');
+  //     final DocumentSnapshot userDoc = await users.doc(user?.uid).get();
+  //     final String? userName = userDoc.get('name');
+  //     print('User name: $userName');
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +49,16 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Hello! " + user.email!),
+            FutureBuilder<String?>(
+              future: _getUserName(),
+              builder: (BuildContext context, AsyncSnapshot<String?> snapshot) {
+                if (snapshot.hasData) {
+                  return Text("Hello! ${snapshot.data}");
+                } else {
+                  return Text("Loading...");
+                }
+              },
+            ),
             MaterialButton(
               onPressed: () {
                 FirebaseAuth.instance.signOut();

@@ -9,6 +9,7 @@ import 'package:ecommerce_admin_tut/services/user.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:responsive_table/DatatableHeader.dart';
+import 'package:responsive_table/responsive_table.dart';
 
 class TablesProvider with ChangeNotifier {
   // ANCHOR table headers
