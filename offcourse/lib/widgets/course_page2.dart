@@ -5,7 +5,7 @@ import 'package:offcourse/models/course.dart';
 import '../additional/colors.dart';
 import 'course_details.dart';
 
-class CoursePage extends StatelessWidget {
+class CoursePageV2 extends StatelessWidget {
   final CourseController courseController = CourseController();
   Future<List<CourseModel>> courses = CourseController().getCourses();
 
@@ -22,9 +22,9 @@ class CoursePage extends StatelessWidget {
             return Container(
               padding: EdgeInsets.only(right: 15.0),
               width: MediaQuery.of(context).size.width - 30.0,
-              height: MediaQuery.of(context).size.height - 50.0,
+              height: MediaQuery.of(context).size.height - 100.0,
               child: GridView.count(
-                crossAxisCount: 2,
+                crossAxisCount: 1,
                 primary: false,
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 15.0,
@@ -93,8 +93,8 @@ class CoursePage extends StatelessWidget {
                   Hero(
                       tag: name,
                       child: Container(
-                          height: 75.0,
-                          width: 75.0,
+                          height: 150.0,
+                          width: 150 * 1.5,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage(imgPath),
@@ -113,30 +113,6 @@ class CoursePage extends StatelessWidget {
                   Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
-                  Padding(
-                      padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            if (!added) ...[
-                              Icon(Icons.shopping_basket,
-                                  color: AppColors.mainColor, size: 12.0),
-                              Text('Add to cart',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: AppColors.mainColor,
-                                      fontSize: 12.0))
-                            ],
-                            if (added) ...[
-                              Icon(Icons.shopping_basket,
-                                  color: AppColors.mainColor, size: 12.0),
-                              Text('Add to cart',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: AppColors.mainColor,
-                                      fontSize: 12.0)),
-                            ]
-                          ]))
                 ]))));
   }
 }

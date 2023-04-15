@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:offcourse/widgets/course_page.dart';
+import 'package:offcourse/widgets/course_page2.dart';
 
 import '../../additional/colors.dart';
 
@@ -25,26 +26,22 @@ class _CatalogPageState extends State<CatalogPage>
         backgroundColor: Colors.white,
         elevation: 0.0,
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFF545D68)),
-          onPressed: () {},
-        ),
-        title: Text('Courses',
+        title: Text('Catalog',
             style: TextStyle(
                 fontFamily: 'Varela',
-                fontSize: 20.0,
+                fontSize: 35.0,
                 color: Color(0xFF545D68))),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.notifications_none, color: Color(0xFF545D68)),
+            icon: Icon(Icons.shopping_bag, color: Color(0xFF545D68)),
             onPressed: () {},
           ),
         ],
       ),
       body: ListView(
-        padding: EdgeInsets.only(left: 20.0),
+        padding: EdgeInsets.only(left: 10.0),
         children: <Widget>[
-          SizedBox(height: 15.0),
+          SizedBox(height: 5.0),
           Text('Categories',
               style: TextStyle(
                   fontFamily: 'Varela',
@@ -60,21 +57,21 @@ class _CatalogPageState extends State<CatalogPage>
               unselectedLabelColor: Color(0xFFCDCDCD),
               tabs: [
                 Tab(
-                  child: Text('Course Sample',
+                  child: Text('Silver pack',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,
                       )),
                 ),
                 Tab(
-                  child: Text('Course Sample',
+                  child: Text('Gold pack',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,
                       )),
                 ),
                 Tab(
-                  child: Text('Course Sample',
+                  child: Text('Platinum pack',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,
@@ -86,7 +83,7 @@ class _CatalogPageState extends State<CatalogPage>
               width: double.infinity,
               child: TabBarView(controller: _tabController, children: [
                 //Тут категорий которые в таббере горизонтальном
-                CoursePage(),
+                CoursePageV2(),
                 CoursePage(),
                 CoursePage(),
               ]))
