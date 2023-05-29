@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:offcourse/uiTestFiles/models/CourseCategory.dart';
 import 'Product.dart';
 import '_payment_cart_model.dart';
 
@@ -11,52 +12,52 @@ class Res {
         color: Colors.amber.shade900,
         count: "3",
         description: description,
-        image: '../img/flutter.jpg',
+        image: 'img/flutter.jpg',
         info: "",
         price: "5000",
         size: "23/56",
         tag: "",
-        title: "Sofa"));
+        title: "Flutter & Dart"));
     productList.add(Product(
         color: Colors.amber.shade900,
         count: "1",
         description: description,
-        image: '../img/unity.jpg',
+        image: 'img/unity.jpg',
         info: "",
         price: "4000",
         size: "43/506",
         tag: "",
-        title: "Table"));
+        title: "Unity 3d Game"));
     productList.add(Product(
         color: Colors.amber.shade900,
         count: "30",
         description: description,
-        image: '../img/spring.jpg',
+        image: 'img/spring.jpg',
         info: "",
         price: "500",
         size: "23/56",
         tag: "",
-        title: "Lamp"));
+        title: "Spring Framework"));
     productList.add(Product(
         color: Colors.amber.shade900,
         count: "5",
         description: description,
-        image: '../img/php.jpg',
+        image: 'img/php.jpg',
         info: "",
         price: "500",
         size: "23/56",
         tag: "",
-        title: "Chair"));
+        title: "Php , mySql"));
     productList.add(Product(
         color: Colors.amber.shade900,
         count: "5",
         description: description,
-        image: '../img/laravel.jpeg',
+        image: 'img/Laravel.jpeg',
         info: "",
         price: "500",
         size: "23/56",
         tag: "",
-        title: "Reading Table"));
+        title: "Laravel"));
     return productList;
   }
 

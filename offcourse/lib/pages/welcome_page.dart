@@ -62,6 +62,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                       MediaQuery.of(context).size.width * 0.20,
                                   height:
                                       MediaQuery.of(context).size.width * 0.20,
+                                  icon: Icon(Icons.category),
                                   text: "Каталог",
                                 )),
                           ),
@@ -74,6 +75,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                         0.20,
                                     height: MediaQuery.of(context).size.width *
                                         0.20,
+                                    icon: Icon(Icons.login),
                                     text: "Войти",
                                   )))
                         ],

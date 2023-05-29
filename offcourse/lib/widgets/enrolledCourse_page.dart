@@ -126,43 +126,19 @@ class EnrolledCoursePage extends StatelessWidget {
                                   image: AssetImage(imgPath),
                                   fit: BoxFit.contain)))),
                   SizedBox(height: 7.0),
+                  Text(name,
+                      style: TextStyle(
+                          color: Color(0xFF575E67),
+                          fontFamily: 'Varela',
+                          fontSize: 20.0)),
                   Text(teacher,
                       style: TextStyle(
                           color: AppColors.mainColor,
                           fontFamily: 'Varela',
                           fontSize: 14.0)),
-                  Text(name,
-                      style: TextStyle(
-                          color: Color(0xFF575E67),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
                   Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
-                  Padding(
-                      padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            if (!added) ...[
-                              Icon(Icons.shopping_basket,
-                                  color: AppColors.mainColor, size: 12.0),
-                              Text('Add to cart',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: AppColors.mainColor,
-                                      fontSize: 12.0))
-                            ],
-                            if (added) ...[
-                              Icon(Icons.shopping_basket,
-                                  color: AppColors.mainColor, size: 12.0),
-                              Text('Add to cart',
-                                  style: TextStyle(
-                                      fontFamily: 'Varela',
-                                      color: AppColors.mainColor,
-                                      fontSize: 12.0)),
-                            ]
-                          ]))
                 ]))));
   }
 }

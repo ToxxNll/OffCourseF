@@ -5,6 +5,7 @@ import 'package:offcourse/additional/colors.dart';
 import 'package:offcourse/models/course.dart';
 import 'package:offcourse/widgets/payment.dart';
 
+import '../models/course2.dart';
 import '../pages/nav_pages/main_page.dart';
 
 class CourseDetail extends StatelessWidget {
@@ -20,7 +21,7 @@ class CourseDetail extends StatelessWidget {
       this.name})
       : super(key: key);
 
-  late CourseModel course = selectedCourse;
+  late CourseModel2 course = selectedCourse;
 
   @override
   Widget build(BuildContext context) {
@@ -66,12 +67,30 @@ class CourseDetail extends StatelessWidget {
                   height: 150.0, width: 100.0, fit: BoxFit.contain)),
           SizedBox(height: 20.0),
           Center(
-            child: Text(teacher,
-                style: TextStyle(
-                    fontFamily: 'Varela',
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.mainColor)),
+            child: SizedBox(
+              height:
+                  100.0, // Specify a fixed height for the ListView container
+              child: ListView.builder(
+                itemCount: teacher.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Text(
+                    course.teachers[index],
+                    style: TextStyle(
+                      fontFamily: 'Varela',
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.mainColor,
+                    ),
+                  );
+                },
+              ),
+            ),
+            // Text(teacher,
+            //     style: TextStyle(
+            //         fontFamily: 'Varela',
+            //         fontSize: 22.0,
+            //         fontWeight: FontWeight.bold,
+            //         color: AppColors.mainColor)),
           ),
           SizedBox(height: 10.0),
           Center(
@@ -169,7 +188,7 @@ class CourseDetail extends StatelessWidget {
     return null;
   }
 
-  addUserCourse(CourseModel course) {
+  addUserCourse(CourseModel2 course) {
     final User user =
         FirebaseAuth.instance.currentUser!; // get current user object
     final userRef =

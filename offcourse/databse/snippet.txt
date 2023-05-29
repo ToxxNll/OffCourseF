@@ -1,0 +1,6 @@
+Export Data:
+npx -p node-firestore-import-export firestore-export -a offcourse.json -b backup.json
+
+Import Data:
+npx -p node-firestore-import-export firestore-import -a offcourse.json -b backup.json
+

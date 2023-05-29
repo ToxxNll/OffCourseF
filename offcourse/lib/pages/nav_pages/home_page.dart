@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:offcourse/pages/welcome_page.dart';
 import 'package:offcourse/uiTestFiles/components/_body.dart';
 import 'package:offcourse/uiTestFiles/models/_res_files.dart';
 

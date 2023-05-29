@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:offcourse/widgets/course_page.dart';
 import 'package:offcourse/widgets/course_page2.dart';
+import 'package:offcourse/widgets/course_page_upd.dart';
 
 import '../../additional/colors.dart';
 
@@ -84,7 +85,7 @@ class _CatalogPageState extends State<CatalogPage>
               child: TabBarView(controller: _tabController, children: [
                 //Тут категорий которые в таббере горизонтальном
                 CoursePageV2(),
-                CoursePage(),
+                CoursePageUPD(),
                 CoursePage(),
               ]))
         ],

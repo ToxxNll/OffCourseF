@@ -13,7 +13,7 @@
 //   void onReady() {
 //     super.onReady();
 //     getCourseData();
-//   }
+  
 
 //   Future<void> getCourseData() async {
 //     try {
@@ -73,4 +73,5 @@
 //     _img = snapshot.data()['img'];
 //     // _id = snapshot.data()];
 //   }
+// }
 // }

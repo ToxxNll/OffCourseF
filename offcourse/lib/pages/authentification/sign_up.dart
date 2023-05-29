@@ -194,7 +194,7 @@ class _SignUpState extends State<SignUpPage> {
                         color: AppColors.mainColor,
                         borderRadius: BorderRadius.circular(12)),
                     child: Center(
-                      child: Text('Sign In',
+                      child: Text('Sign Up',
                           style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Varela',

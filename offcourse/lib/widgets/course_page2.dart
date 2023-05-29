@@ -2,12 +2,51 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:offcourse/models/course.dart';
+import 'package:offcourse/uiTestFiles/models/CourseCategory.dart';
 import '../additional/colors.dart';
 import 'course_details.dart';
+
+List<CourseCategory> fetchCourseCategory() {
+  List<CourseCategory> categoryList = [];
+  String description =
+      "A product description is the marketing copy that explains what a product is and why it’s worth purchasing. The purpose of a product description is to supply customers with important information about the features and benefits of the product so they’re compelled to buy";
+  categoryList.add(CourseCategory(
+      count: "3",
+      image: '../img/javascript.jpg',
+      info: "",
+      tag: "Math",
+      title: "Math"));
+  categoryList.add(CourseCategory(
+      count: "1",
+      image: '../img/unity.jpg',
+      info: "",
+      tag: "English",
+      title: "English"));
+  categoryList.add(CourseCategory(
+      count: "30",
+      image: '../img/spring.jpg',
+      info: "",
+      tag: "History",
+      title: "History"));
+  categoryList.add(CourseCategory(
+      count: "5",
+      image: '../img/php.jpg',
+      info: "",
+      tag: "Geography",
+      title: "Geography"));
+  categoryList.add(CourseCategory(
+      count: "5",
+      image: '../img/laravel.jpeg',
+      info: "",
+      tag: "Economics",
+      title: "Economics"));
+  return categoryList;
+}
 
 class CoursePageV2 extends StatelessWidget {
   final CourseController courseController = CourseController();
   Future<List<CourseModel>> courses = CourseController().getCourses();
+  List<CourseCategory> coursesCategory = fetchCourseCategory();
 
   @override
   Widget build(BuildContext context) {
@@ -28,16 +67,14 @@ class CoursePageV2 extends StatelessWidget {
                 primary: false,
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 15.0,
-                childAspectRatio: 0.8,
-                children: List.generate(courses.length, (index) {
-                  CourseModel course = courses[index];
+                childAspectRatio: 2,
+                children: List.generate(coursesCategory.length, (index) {
+                  CourseCategory coursesCat = coursesCategory[index];
                   return _buildCard(
-                    course,
-                    course.name,
-                    course.teacher,
-                    course.img,
-                    course.added,
-                    course.isFavourite,
+                    coursesCat,
+                    coursesCat.title,
+                    coursesCat.tag,
+                    coursesCat.image,
                     context,
                   );
                 }),
@@ -55,8 +92,8 @@ class CoursePageV2 extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(course, String name, String teacher, String imgPath,
-      bool added, bool isFavourite, context) {
+  Widget _buildCard(
+      course, String name, String teacher, String imgPath, context) {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
@@ -79,39 +116,27 @@ class CoursePageV2 extends StatelessWidget {
                     ],
                     color: Colors.white),
                 child: Column(children: [
-                  Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            isFavourite
-                                ? Icon(Icons.favorite_border,
-                                    color: AppColors.mainColor)
-                                : Icon(Icons.favorite,
-                                    color: AppColors.mainColor)
-                          ])),
                   Hero(
                       tag: name,
                       child: Container(
                           height: 150.0,
-                          width: 150 * 1.5,
+                          width: 150 * 5,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage(imgPath),
                                   fit: BoxFit.contain)))),
-                  SizedBox(height: 7.0),
                   Text(teacher,
                       style: TextStyle(
                           color: AppColors.mainColor,
                           fontFamily: 'Varela',
-                          fontSize: 14.0)),
+                          fontSize: 24.0)),
                   Text(name,
                       style: TextStyle(
                           color: Color(0xFF575E67),
                           fontFamily: 'Varela',
                           fontSize: 14.0)),
                   Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(1.0),
                       child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
                 ]))));
   }

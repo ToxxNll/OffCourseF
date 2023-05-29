@@ -1,0 +1,132 @@
+{
+    "__collections__": {
+        "Courses": {
+            "hr5CVJHw0jUXA2GeECbJ": {
+                "teacher": "Teacher2",
+                "added": false,
+                "category": "Math",
+                "isFavourite": false,
+                "id": "id1",
+                "img": "../img/php.jpg",
+                "name": "php , mySql ",
+                "__collections__": {
+                    "course_catalog": {
+                        "course1": {
+                            "teachers": [
+                                "teacher1",
+                                "teacher2"
+                            ],
+                            "name": "Geometry",
+                            "img": "img/unity.jpg",
+                            "id": "course1",
+                            "duration": "eternity",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "audience": "no restrictions",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "language": "english",
+                            "__collections__": {}
+                        },
+                        "course2": {
+                            "teachers": [
+                                "teacher1"
+                            ],
+                            "name": "Flutter",
+                            "img": "img/flutter.jpg",
+                            "id": "course2",
+                            "duration": "eternity",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "audience": "18+",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "language": "russian",
+                            "__collections__": {}
+                        }
+                    }
+                }
+            },
+            "uuVG8JRj9OGewzvgU6bI": {
+                "teacher": "Teacher3",
+                "added": false,
+                "category": "English",
+                "isFavourite": false,
+                "id": "id2",
+                "img": "../img/javascript.jpg",
+                "name": "JavaScript",
+                "__collections__": {}
+            },
+            "ygzQ7yQMtrrb6BnnEbcO": {
+                "teacher": "Teacher1",
+                "added": false,
+                "category": "Programming",
+                "isFavourite": false,
+                "id": "id3",
+                "img": "../img/figma.jpg",
+                "name": "Figma",
+                "__collections__": {}
+            }
+        },
+        "Teachers": {
+            "teacher1": {
+                "name": "Sabeshov Aslan",
+                "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
+                "__collections__": {}
+            },
+            "teacher2": {
+                "name ": "Beisekov Aslan",
+                "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
+                "__collections__": {}
+            }
+        },
+        "users": {
+            "HdtsjykSQufoSPunqTqi5u6XKw12": {
+                "uid": "HdtsjykSQufoSPunqTqi5u6XKw12",
+                "name": "tokh",
+                "email": "test5@test.ru",
+                "isSubscriber": true,
+                "enrolledCourses": [
+                    {
+                        "id": "id1",
+                        "name": "SampleCourse2",
+                        "teacher": "Teacher2",
+                        "img": "img/course_sample.jpg",
+                        "added": false,
+                        "isFavourite": false
+                    },
+                    {
+                        "id": "id2",
+                        "name": "SampleCourse3",
+                        "teacher": "Teacher3",
+                        "img": "img/course_sample.jpg",
+                        "added": false,
+                        "isFavourite": false
+                    },
+                    {
+                        "id": "id3",
+                        "name": "Figma",
+                        "teacher": "Teacher1",
+                        "img": "../img/figma.jpg",
+                        "added": false,
+                        "isFavourite": false
+                    }
+                ],
+                "__collections__": {}
+            },
+            "WqdiXSuFdSPcUmNPrAtNLrciZVu2": {
+                "uid": "WqdiXSuFdSPcUmNPrAtNLrciZVu2",
+                "name": "tokh2",
+                "email": "test6@test.ru",
+                "isSubscriber": true,
+                "enrolledCourses": [
+                    {
+                        "id": "id1",
+                        "name": "php , mySql ",
+                        "teacher": "Teacher2",
+                        "img": "../img/php.jpg",
+                        "added": false,
+                        "isFavourite": false
+                    }
+                ],
+                "__collections__": {}
+            }
+        }
+    }
+}
