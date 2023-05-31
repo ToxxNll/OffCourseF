@@ -3,22 +3,50 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:offcourse/additional/colors.dart';
 import 'package:offcourse/models/course.dart';
+import 'package:offcourse/models/teachers.dart';
+import 'package:offcourse/widgets/course_page_upd.dart';
 import 'package:offcourse/widgets/payment.dart';
 
 import '../models/course2.dart';
 import '../pages/nav_pages/main_page.dart';
 
 class CourseDetail extends StatelessWidget {
-  final assetPath, teacher, name;
+  final assetPath,
+      teacher,
+      name,
+      about,
+      duration,
+      language,
+      audience,
+      requirements;
 
   var selectedCourse;
+
+  final TeacherController teacherController = TeacherController();
+  Future<List<teacherModel>> teachers = TeacherController().getTeacher();
+
+  // Stream<List<teacherModel>> getCourseTeachersStream(String id) {
+  //   return FirebaseFirestore.instance
+  //       .collection('Teachers')
+  //       .doc(id)
+  //       .snapshots()
+  //       .map((documentSnapshot) {
+  //     List<dynamic> data = documentSnapshot.data()!['teachers'];
+  //     return data.map((teacher) => teacherModel.fromMap(teacher)).toList();
+  //   });
+  // }
 
   CourseDetail(
       {Key? key,
       required this.selectedCourse,
       this.assetPath,
       this.teacher,
-      this.name})
+      this.name,
+      this.about,
+      this.duration,
+      this.language,
+      this.audience,
+      this.requirements})
       : super(key: key);
 
   late CourseModel2 course = selectedCourse;
@@ -36,7 +64,7 @@ class CourseDetail extends StatelessWidget {
             Navigator.of(context).pop();
           },
         ),
-        title: Text(name,
+        title: Text(textShrink(name, 25),
             style: TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
@@ -50,69 +78,111 @@ class CourseDetail extends StatelessWidget {
       ),
       body: Stack(children: [
         ListView(children: [
-          SizedBox(height: 15.0),
-          Padding(
-            padding: EdgeInsets.only(left: 20.0),
-            child: Text('',
-                style: TextStyle(
-                    fontFamily: 'Varela',
-                    fontSize: 42.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFF17532))),
-          ),
-          SizedBox(height: 15.0),
+          // SizedBox(height: 15.0),
+          // Padding(
+          //   padding: EdgeInsets.only(left: 20.0),
+          //   child: Text('',
+          //       style: TextStyle(
+          //           fontFamily: 'Varela',
+          //           fontSize: 42.0,
+          //           fontWeight: FontWeight.bold,
+          //           color: Color(0xFFF17532))),
+          // ),
+          // SizedBox(height: 15.0),
           Hero(
               tag: name,
               child: Image.asset(assetPath,
-                  height: 150.0, width: 100.0, fit: BoxFit.contain)),
+                  height: MediaQuery.of(context).size.height * 0.30,
+                  fit: BoxFit.contain)),
           SizedBox(height: 20.0),
+
           Center(
-            child: SizedBox(
-              height:
-                  100.0, // Specify a fixed height for the ListView container
-              child: ListView.builder(
-                itemCount: teacher.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Text(
-                    course.teachers[index],
-                    style: TextStyle(
-                      fontFamily: 'Varela',
-                      fontSize: 22.0,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.mainColor,
+              child: Padding(
+                  padding: EdgeInsets.only(left: 7.0, right: 7.0, top: 5),
+                  child: Column(children: [
+                    SizedBox(
+                      height:
+                          100.0, // Specify a fixed height for the ListView container
+                      child: ListView.builder(
+                        itemCount: teacher.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Scaffold(
+                              body: FutureBuilder<teacherModel>(
+                                  future: teacherController
+                                      .getTeacherById(teacher[index]),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.hasData) {
+                                      teacherModel teachers_data =
+                                          snapshot.data!;
+                                      print(teachers_data);
+                                      return Container(
+                                        padding: EdgeInsets.only(right: 15.0),
+                                        width:
+                                            MediaQuery.of(context).size.width -
+                                                30.0,
+                                        height:
+                                            MediaQuery.of(context).size.height -
+                                                50.0,
+                                        child: GridView.count(
+                                            crossAxisCount: 1,
+                                            primary: false,
+                                            crossAxisSpacing: 10.0,
+                                            mainAxisSpacing: 15.0,
+                                            childAspectRatio: 0.8,
+                                            children: [
+                                              Text(
+                                                teachers_data.name,
+                                                style: TextStyle(
+                                                  fontFamily: 'Varela',
+                                                  fontSize: 22.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: AppColors.mainColor,
+                                                ),
+                                              )
+                                            ]),
+                                      );
+                                    } else if (snapshot.hasError) {
+                                      throw snapshot.error!;
+                                    } else {
+                                      return Center(
+                                        child: CircularProgressIndicator(),
+                                      );
+                                    }
+                                  }));
+
+                          //
+                        },
+                      ),
                     ),
-                  );
-                },
-              ),
-            ),
-            // Text(teacher,
-            //     style: TextStyle(
-            //         fontFamily: 'Varela',
-            //         fontSize: 22.0,
-            //         fontWeight: FontWeight.bold,
-            //         color: AppColors.mainColor)),
-          ),
-          SizedBox(height: 10.0),
-          Center(
-            child: Text(name,
-                style: TextStyle(
-                    color: Color(0xFF575E67),
-                    fontFamily: 'Varela',
-                    fontSize: 24.0)),
-          ),
-          SizedBox(height: 20.0),
-          Center(
-            child: Container(
-              width: MediaQuery.of(context).size.width - 50.0,
-              child: Text(
-                  'An excellent course that we recommend everyone to take. You will gain a ton of knowledge and also strengthen the existing knowledge.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontFamily: 'Varela',
-                      fontSize: 16.0,
-                      color: Color(0xFFB4B8B9))),
-            ),
-          )
+                    // Text(teacher,
+                    //     style: TextStyle(
+                    //         fontFamily: 'Varela',
+                    //         fontSize: 22.0,
+                    //         fontWeight: FontWeight.bold,
+                    //         color: AppColors.mainColor)),
+
+                    SizedBox(height: 10.0),
+                    Center(
+                      child: Text(name,
+                          style: TextStyle(
+                              color: Color(0xFF575E67),
+                              fontFamily: 'Varela',
+                              fontSize: 24.0)),
+                    ),
+                    SizedBox(height: 20.0),
+                    Center(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width - 50.0,
+                        child: Text(
+                            'An excellent course that we recommend everyone to take. You will gain a ton of knowledge and also strengthen the existing knowledge.',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Varela',
+                                fontSize: 16.0,
+                                color: Color(0xFFB4B8B9))),
+                      ),
+                    )
+                  ])))
         ]),
         SizedBox(height: 20.0),
         Positioned(

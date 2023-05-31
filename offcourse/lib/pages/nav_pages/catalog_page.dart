@@ -84,8 +84,8 @@ class _CatalogPageState extends State<CatalogPage>
               width: double.infinity,
               child: TabBarView(controller: _tabController, children: [
                 //Тут категорий которые в таббере горизонтальном
-                CoursePageV2(),
                 CoursePageUPD(),
+                CoursePageV2(),
                 CoursePage(),
               ]))
         ],

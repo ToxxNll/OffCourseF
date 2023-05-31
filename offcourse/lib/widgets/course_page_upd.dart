@@ -6,9 +6,9 @@ import 'package:offcourse/models/course2.dart';
 import '../additional/colors.dart';
 import 'course_details.dart';
 
-String textShrink(String text) {
-  if (text.length > 100) {
-    text = text.substring(0, 100) + "..";
+String textShrink(String text, int characters) {
+  if (text.length > characters) {
+    text = text.substring(0, characters) + "..";
   }
 
   return text;
@@ -30,9 +30,9 @@ class CoursePageUPD extends StatelessWidget {
             print('-----------------------------------------------------');
             print(courses);
             return Container(
-              padding: EdgeInsets.only(right: 15.0),
-              width: MediaQuery.of(context).size.width - 30.0,
-              height: MediaQuery.of(context).size.height * 0.2,
+              padding: EdgeInsets.only(right: 5.0),
+              width: MediaQuery.of(context).size.width * 0.95,
+              height: MediaQuery.of(context).size.height * 0.8,
               child: Column(
                 children: List.generate(courses.length, (index) {
                   CourseModel2 course = courses[index];
@@ -42,6 +42,10 @@ class CoursePageUPD extends StatelessWidget {
                     course.teachers,
                     course.img,
                     course.about,
+                    course.audience,
+                    course.language,
+                    course.requirements,
+                    course.duration,
                     context,
                   );
                 }),
@@ -59,10 +63,20 @@ class CoursePageUPD extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(course, String name, List teachers, String imgPath,
-      String about, context) {
+  Widget _buildCard(
+    course,
+    String name,
+    List teachers,
+    String imgPath,
+    String about,
+    String audience,
+    String language,
+    String requirements,
+    String duration,
+    context,
+  ) {
     return Padding(
-        padding: EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
+        padding: EdgeInsets.only(top: 10.0, bottom: 0.0, left: 5.0, right: 5.0),
         child: InkWell(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
@@ -70,6 +84,11 @@ class CoursePageUPD extends StatelessWidget {
                       selectedCourse: course,
                       assetPath: imgPath,
                       teacher: teachers,
+                      about: about,
+                      duration: duration,
+                      language: language,
+                      audience: audience,
+                      requirements: requirements,
                       name: name)));
             },
             child: Container(
@@ -77,94 +96,127 @@ class CoursePageUPD extends StatelessWidget {
                     // borderRadius: BorderRadius.circular(15.0),
                     boxShadow: [
                       BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 3.0,
-                          blurRadius: 5.0)
-                    ], color: Colors.white),
-                child: Row(children: [
-                  // Padding(
-                  //     padding: EdgeInsets.all(5.0),
-                  //     child: Row(
-                  //         mainAxisAlignment: MainAxisAlignment.end,
-                  //         children: [
-                  //           isFavourite
-                  //               ? Icon(Icons.favorite_border,
-                  //                   color: AppColors.mainColor)
-                  //               : Icon(Icons.favorite,
-                  //                   color: AppColors.mainColor)
-                  //         ])),
-                  Hero(
-                      tag: name,
-                      child: Container(
-                          height: MediaQuery.of(context).size.width * 0.2,
-                          width: MediaQuery.of(context).size.height * 0.2,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(imgPath),
-                                  fit: BoxFit.contain)))),
-                  SizedBox(height: 7.0),
-                  // Container(
-                  //   height:
-                  //       100.0, // Specify a fixed height for the ListView container
-                  //   child: ListView.builder(
-                  //     itemCount: teachers.length,
-                  //     itemBuilder: (BuildContext context, int index) {
-                  //       return Text(
-                  //         course.teachers[index],
-                  //         style: TextStyle(
-                  //           color: AppColors.mainColor,
-                  //           fontFamily: 'Varela',
-                  //           fontSize: 14.0,
-                  //         ),
-                  //       );
-                  //     },
-                  //   ),
-                  // ),
-                  Column(
+                          color: Colors.blueAccent.withOpacity(0.1),
+                          spreadRadius: 1.0,
+                          blurRadius: 2.0)
+                    ], color: AppColors.accentColor1),
+                child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                          width: MediaQuery.of(context).size.height * 0.4,
-                          child: Text(textShrink(about),
-                              style: TextStyle(
-                                  color: AppColors.mainColor,
-                                  fontFamily: 'Varela',
-                                  fontSize: 14.0))),
-                      Container(
-                          child: Text(name,
-                              style: TextStyle(
-                                  color: AppColors.mainColor,
-                                  fontFamily: 'Varela',
-                                  fontSize: 14.0))),
+                      // Padding(
+                      //     padding: EdgeInsets.all(5.0),
+                      //     child: Row(
+                      //         mainAxisAlignment: MainAxisAlignment.end,
+                      //         children: [
+                      //           isFavourite
+                      //               ? Icon(Icons.favorite_border,
+                      //                   color: AppColors.mainColor)
+                      //               : Icon(Icons.favorite,
+                      //                   color: AppColors.mainColor)
+                      //         ])),
+                      Hero(
+                          tag: name,
+                          child: Container(
+                              height: MediaQuery.of(context).size.width * 0.2,
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(imgPath),
+                                      fit: BoxFit.contain)))),
+                      // SizedBox(height: 50.0),
+                      // Container(
+                      //   height:
+                      //       100.0, // Specify a fixed height for the ListView container
+                      //   child: ListView.builder(
+                      //     itemCount: teachers.length,
+                      //     itemBuilder: (BuildContext context, int index) {
+                      //       return Text(
+                      //         course.teachers[index],
+                      //         style: TextStyle(
+                      //           color: AppColors.mainColor,
+                      //           fontFamily: 'Varela',
+                      //           fontSize: 14.0,
+                      //         ),
+                      //       );
+                      //     },
+                      //   ),
+                      // ),
                       Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child:
-                              Container(color: Color(0xFFEBEBEB), height: 1.0)),
-                    ],
-                  )
-                  // Padding(
-                  //     padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                  //     child: Row(
-                  //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  //         children: [
-                  //           if (!added) ...[
-                  //             Icon(Icons.shopping_basket,
-                  //                 color: AppColors.mainColor, size: 12.0),
-                  //             Text('Add to cart',
-                  //                 style: TextStyle(
-                  //                     fontFamily: 'Varela',
-                  //                     color: AppColors.mainColor,
-                  //                     fontSize: 12.0))
-                  //           ],
-                  //           if (added) ...[
-                  //             Icon(Icons.shopping_basket,
-                  //                 color: AppColors.mainColor, size: 12.0),
-                  //             Text('Add to cart',
-                  //                 style: TextStyle(
-                  //                     fontFamily: 'Varela',
-                  //                     color: AppColors.mainColor,
-                  //                     fontSize: 12.0)),
-                  //           ]
-                  //         ]))
-                ]))));
+                          padding: EdgeInsets.only(left: 4.0, top: 5),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  child: Text(
+                                    name,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: 'Varela',
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14.0),
+                                  )),
+                              SizedBox(height: 5.0),
+                              Container(
+                                  child: RichText(
+                                      text: TextSpan(
+                                          text: 'Duration ',
+                                          style: TextStyle(
+                                              color: AppColors.pressableText,
+                                              fontFamily: 'Varela',
+                                              fontSize: 14.0),
+                                          children: [
+                                    TextSpan(
+                                      text: duration,
+                                      style: TextStyle(
+                                          color: Colors.black54,
+                                          fontFamily: 'Varela',
+                                          fontSize: 14.0),
+                                    )
+                                  ]))),
+                              SizedBox(height: 5.0),
+                              Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.6,
+                                  // height:
+                                  //     MediaQuery.of(context).size.width * 0.035,
+                                  child: Text(textShrink(about, 70),
+                                      style: TextStyle(
+                                          color: Colors.black54,
+                                          fontFamily: 'Varela',
+                                          fontSize: 14.0))),
+                              Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Container(
+                                      color: Color(0xFFEBEBEB), height: 1.0)),
+                            ],
+                          )
+                          // Padding(
+                          //     padding: EdgeInsets.only(left: 5.0, right: 5.0),
+                          //     child: Row(
+                          //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          //         children: [
+                          //           if (!added) ...[
+                          //             Icon(Icons.shopping_basket,
+                          //                 color: AppColors.mainColor, size: 12.0),
+                          //             Text('Add to cart',
+                          //                 style: TextStyle(
+                          //                     fontFamily: 'Varela',
+                          //                     color: AppColors.mainColor,
+                          //                     fontSize: 12.0))
+                          //           ],
+                          //           if (added) ...[
+                          //             Icon(Icons.shopping_basket,
+                          //                 color: AppColors.mainColor, size: 12.0),
+                          //             Text('Add to cart',
+                          //                 style: TextStyle(
+                          //                     fontFamily: 'Varela',
+                          //                     color: AppColors.mainColor,
+                          //                     fontSize: 12.0)),
+                          //           ]
+                          //         ]))
+                          )
+                    ]))));
   }
 }

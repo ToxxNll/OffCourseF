@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class CourseModel2 {
   String _id;
   String _name;
-  List _teachers;
+  List<dynamic> _teachers;
   String _img;
   String _about;
   String _audience;
@@ -82,9 +82,9 @@ class CourseController2 {
           doc.get('teachers'),
           doc.get('img'),
           doc.get('about'),
+          doc.get('audience'),
           doc.get('duration'),
           doc.get('language'),
-          doc.get('audience'),
           doc.get('requirements')));
     });
     return courses;

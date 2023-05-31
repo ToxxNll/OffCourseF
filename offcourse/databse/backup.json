@@ -11,10 +11,17 @@
                 "name": "php , mySql ",
                 "__collections__": {
                     "course_catalog": {
-                        "course1": {
+                        "0": {
                             "teachers": [
-                                "teacher1",
-                                "teacher2"
+                                {
+                                    "name": "Sabeshov Aslan",
+                                    "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue."
+                                    },
+                                {
+                                    "name ": "Beisekov Aslan",
+                                    "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue."
+                                    
+                                }
                             ],
                             "name": "Geometry",
                             "img": "img/unity.jpg",
@@ -26,9 +33,12 @@
                             "language": "english",
                             "__collections__": {}
                         },
-                        "course2": {
+                        "1": {
                             "teachers": [
-                                "teacher1"
+                                {
+                                    "name": "Sabeshov Aslan",
+                                    "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue."
+                                }
                             ],
                             "name": "Flutter",
                             "img": "img/flutter.jpg",
@@ -65,12 +75,12 @@
             }
         },
         "Teachers": {
-            "teacher1": {
+            "0": {
                 "name": "Sabeshov Aslan",
                 "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
                 "__collections__": {}
             },
-            "teacher2": {
+            "1": {
                 "name ": "Beisekov Aslan",
                 "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
                 "__collections__": {}
