@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'course2.dart';
+
 class teacherModel {
   String _name;
   String _info;
@@ -39,6 +41,27 @@ class TeacherController {
     });
     return teachers;
   }
+
+  void initializeCourse(CourseModel2? selectedCourse) {
+    CourseModel2? course = selectedCourse;
+    List<String>? teachers_str =
+        CourseController2().teachersList(course?.teachers);
+  }
+
+  // Future<teacherModel> getTeacherById(
+  //     String teacherId, CourseModel2? selectedCourse) async {
+  //   initializeCourse(selectedCourse);
+  //   final DocumentSnapshot snapshot =
+  //       await _teachersCollection.doc(teacherId).get();
+  //   if (snapshot.exists) {
+  //     return teacherModel(
+  //       snapshot.get('name'),
+  //       snapshot.get('info'),
+  //     );
+  //   } else {
+  //     throw Exception('Teacher not found');
+  //   }
+  // }
 
   Future<teacherModel> getTeacherById(String teacherId) async {
     final DocumentSnapshot snapshot =

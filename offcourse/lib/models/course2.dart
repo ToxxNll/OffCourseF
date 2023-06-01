@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:offcourse/models/teachers.dart';
 
 class CourseModel2 {
   String _id;
   String _name;
   List<dynamic> _teachers;
+  // List<teacherModel> _teachers;
   String _img;
   String _about;
   String _audience;
@@ -88,6 +90,16 @@ class CourseController2 {
           doc.get('requirements')));
     });
     return courses;
+  }
+
+  List<String>? teachersList(List<dynamic>? teacher) {
+    List<String> teachers = [];
+    for (var teacher in teachers) {
+      if (teacher is String) {
+        teachers.add(teacher);
+      }
+    }
+    return teachers;
   }
 
   Future<void> addCourse(CourseModel2 course) async {

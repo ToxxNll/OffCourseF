@@ -23,7 +23,7 @@ class CourseDetail extends StatelessWidget {
   var selectedCourse;
 
   final TeacherController teacherController = TeacherController();
-  Future<List<teacherModel>> teachers = TeacherController().getTeacher();
+  Future<teacherModel> teachers = TeacherController().getTeacherById('');
 
   // Stream<List<teacherModel>> getCourseTeachersStream(String id) {
   //   return FirebaseFirestore.instance
@@ -101,57 +101,56 @@ class CourseDetail extends StatelessWidget {
                   padding: EdgeInsets.only(left: 7.0, right: 7.0, top: 5),
                   child: Column(children: [
                     SizedBox(
-                      height:
-                          100.0, // Specify a fixed height for the ListView container
-                      child: ListView.builder(
-                        itemCount: teacher.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Scaffold(
-                              body: FutureBuilder<teacherModel>(
-                                  future: teacherController
-                                      .getTeacherById(teacher[index]),
-                                  builder: (context, snapshot) {
-                                    if (snapshot.hasData) {
-                                      teacherModel teachers_data =
-                                          snapshot.data!;
-                                      print(teachers_data);
-                                      return Container(
-                                        padding: EdgeInsets.only(right: 15.0),
-                                        width:
-                                            MediaQuery.of(context).size.width -
-                                                30.0,
-                                        height:
-                                            MediaQuery.of(context).size.height -
-                                                50.0,
-                                        child: GridView.count(
-                                            crossAxisCount: 1,
-                                            primary: false,
-                                            crossAxisSpacing: 10.0,
-                                            mainAxisSpacing: 15.0,
-                                            childAspectRatio: 0.8,
-                                            children: [
-                                              Text(
-                                                teachers_data.name,
-                                                style: TextStyle(
-                                                  fontFamily: 'Varela',
-                                                  fontSize: 22.0,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: AppColors.mainColor,
-                                                ),
-                                              )
-                                            ]),
-                                      );
-                                    } else if (snapshot.hasError) {
-                                      throw snapshot.error!;
-                                    } else {
-                                      return Center(
-                                        child: CircularProgressIndicator(),
-                                      );
-                                    }
-                                  }));
+                      height: MediaQuery.of(context).size.height * 0.1,
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.09,
+                        child: ListView.builder(
+                          itemCount: teacher.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Scaffold(
+                                body: FutureBuilder<teacherModel>(
+                                    future: teacherController
+                                        .getTeacherById(teacher[index]),
+                                    builder: (context, snapshot) {
+                                      if (snapshot.hasData) {
+                                        teacherModel teachers_data =
+                                            snapshot.data!;
+                                        print(
+                                            '9999999999999999999999999999999999999999999999999999999999999999999999');
+                                        print(teacher[index]);
+                                        print(teachers_data.name);
+                                        return Container(
+                                          padding: EdgeInsets.only(right: 15.0),
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.9,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.09,
+                                          child: Text(
+                                            teachers_data.name,
+                                            style: TextStyle(
+                                              fontFamily: 'Varela',
+                                              fontSize: 22.0,
+                                              fontWeight: FontWeight.bold,
+                                              color: AppColors.mainColor,
+                                            ),
+                                          ),
+                                        );
+                                      } else if (snapshot.hasError) {
+                                        throw snapshot.error!;
+                                      } else {
+                                        return Center(
+                                          child: CircularProgressIndicator(),
+                                        );
+                                      }
+                                    }));
 
-                          //
-                        },
+                            //
+                          },
+                        ),
                       ),
                     ),
                     // Text(teacher,
@@ -173,6 +172,7 @@ class CourseDetail extends StatelessWidget {
                     Center(
                       child: Container(
                         width: MediaQuery.of(context).size.width - 50.0,
+                        height: MediaQuery.of(context).size.height - 50.0,
                         child: Text(
                             'An excellent course that we recommend everyone to take. You will gain a ton of knowledge and also strengthen the existing knowledge.',
                             textAlign: TextAlign.center,
