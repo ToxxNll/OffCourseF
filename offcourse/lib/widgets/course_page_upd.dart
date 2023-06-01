@@ -36,6 +36,8 @@ class CoursePageUPD extends StatelessWidget {
               child: Column(
                 children: List.generate(courses.length, (index) {
                   CourseModel2 course = courses[index];
+
+                  print(course.teachers);
                   return _buildCard(
                     course,
                     course.name,
@@ -66,7 +68,7 @@ class CoursePageUPD extends StatelessWidget {
   Widget _buildCard(
     course,
     String name,
-    List teachers,
+    String teachers,
     String imgPath,
     String about,
     String audience,

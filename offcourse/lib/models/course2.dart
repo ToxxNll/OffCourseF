@@ -4,7 +4,7 @@ import 'package:offcourse/models/teachers.dart';
 class CourseModel2 {
   String _id;
   String _name;
-  List<dynamic> _teachers;
+  String _teachers;
   // List<teacherModel> _teachers;
   String _img;
   String _about;
@@ -26,7 +26,7 @@ class CourseModel2 {
 
   String get id => _id;
   String get name => _name;
-  List get teachers => _teachers;
+  String get teachers => _teachers;
   String get img => _img;
   String get about => _about;
   String get audience => _audience;
@@ -92,7 +92,7 @@ class CourseController2 {
     return courses;
   }
 
-  List<String>? teachersList(List<dynamic>? teacher) {
+  List<String>? teachersList(dynamic? teacher) {
     List<String> teachers = [];
     for (var teacher in teachers) {
       if (teacher is String) {

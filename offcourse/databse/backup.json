@@ -1,1 +1,286 @@
-{"__collections__":{"Courses":{"hr5CVJHw0jUXA2GeECbJ":{"teacher":"Teacher2","added":false,"category":"Math","isFavourite":false,"id":"id1","img":"../img/php.jpg","name":"php , mySql ","__collections__":{"Details":{"detail1":{"duration":"eternity","requirements":"Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ","audience":"no restrictions","about":"Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.","course":"course1","language":"english","teacher":"teacher1","__collections__":{}}},"course_catalog":{"0":{"duration":"eternity","audience":"no restrictions","img":"img/unity.jpg","requirements":"Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ","about":"Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.","name":"Geometry","language":"english","id":"course1","teachers":["0","1"],"__collections__":{}},"1":{"duration":"eternity","audience":"18+","img":"img/flutter.jpg","requirements":"Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ","teachers":[{"name":"Sabeshov Aslan","info":"Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue."}],"about":"Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.","name":"Flutter","language":"russian","id":"course2","__collections__":{}}}}},"uuVG8JRj9OGewzvgU6bI":{"teacher":"Teacher3","added":false,"category":"English","isFavourite":false,"id":"id2","img":"../img/javascript.jpg","name":"JavaScript","__collections__":{}},"ygzQ7yQMtrrb6BnnEbcO":{"teacher":"Teacher1","added":false,"category":"Programming","isFavourite":false,"id":"id3","img":"../img/figma.jpg","name":"Figma","__collections__":{}}},"Teachers":{"0":{"name":"Sabeshov Aslan","info":"Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.","__collections__":{}},"1":{"name ":"Beisekov Aslan","info":"Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.","__collections__":{}},"teacher1":{"name":"Sabeshov Aslan","info":"Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.","id":"0","__collections__":{}},"teacher2":{"name ":"Beisekov Aslan","info":"Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.","id":"1","__collections__":{}}},"data":{"F5KdwVMw2k1dPGZqdezY":{"duration":"sd","audience":"asa","img":"a","requirements":"e","about":"as","name":"d","language":"s","id":"course3","__collections__":{}},"vnAC9AOG9IcVAj1upFU1":{"duration":"sd","audience":"asa","img":"a","requirements":"e","about":"as","name":"d","language":"s","id":"course3","__collections__":{}}},"users":{"HdtsjykSQufoSPunqTqi5u6XKw12":{"uid":"HdtsjykSQufoSPunqTqi5u6XKw12","name":"tokh","email":"test5@test.ru","isSubscriber":true,"enrolledCourses":[{"id":"id1","name":"SampleCourse2","teacher":"Teacher2","img":"img/course_sample.jpg","added":false,"isFavourite":false},{"id":"id2","name":"SampleCourse3","teacher":"Teacher3","img":"img/course_sample.jpg","added":false,"isFavourite":false},{"id":"id3","name":"Figma","teacher":"Teacher1","img":"../img/figma.jpg","added":false,"isFavourite":false}],"__collections__":{}},"WqdiXSuFdSPcUmNPrAtNLrciZVu2":{"uid":"WqdiXSuFdSPcUmNPrAtNLrciZVu2","name":"tokh2","email":"test6@test.ru","isSubscriber":true,"enrolledCourses":[{"id":"id1","name":"php , mySql ","teacher":"Teacher2","img":"../img/php.jpg","added":false,"isFavourite":false}],"__collections__":{}}}}}
+{
+    "__collections__": {
+        "Courses": {
+            "hr5CVJHw0jUXA2GeECbJ": {
+                "teacher": "Teacher2",
+                "added": false,
+                "category": "Math",
+                "isFavourite": false,
+                "id": "id1",
+                "img": "../img/php.jpg",
+                "name": "php , mySql ",
+                "__collections__": {
+                    "Details": {
+                        "detail1": {
+                            "duration": "eternity",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "audience": "no restrictions",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "course": "course1",
+                            "language": "english",
+                            "teacher": "teacher1",
+                            "__collections__": {}
+                        }
+                    },
+                    "course_catalog": {
+                        "0": {
+                            "duration": "eternity",
+                            "audience": "no restrictions",
+                            "img": "img/unity.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Geometry",
+                            "id": "course1",
+                            "language": "english",
+                            "teachers": "0",
+                            "__collections__": {}
+                        },
+                        "1": {
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        },
+                        "2": {
+                            "duration": "18 month",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        },
+                        "3": {
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        },
+                        "4": {
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        },
+                        "5": {
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        },
+                        "6": {
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        },
+                        "7": {
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        },
+                        "8": {
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        },
+                        "9": {
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        },
+                        "10": {
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
+                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "language": "russian",
+                            "teachers": "1",
+                            "__collections__": {}
+                        }
+
+                    }
+                }
+            },
+            "uuVG8JRj9OGewzvgU6bI": {
+                "teacher": "Teacher3",
+                "added": false,
+                "category": "English",
+                "isFavourite": false,
+                "id": "id2",
+                "img": "../img/javascript.jpg",
+                "name": "JavaScript",
+                "__collections__": {}
+            },
+            "ygzQ7yQMtrrb6BnnEbcO": {
+                "teacher": "Teacher1",
+                "added": false,
+                "category": "Programming",
+                "isFavourite": false,
+                "id": "id3",
+                "img": "../img/figma.jpg",
+                "name": "Figma",
+                "__collections__": {}
+            }
+        },
+        "Teachers": {
+            "0": {
+                "name": "Sabeshov Aslan",
+                "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
+                "__collections__": {}
+            },
+            "1": {
+                "name ": "Beisekov Aslan",
+                "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
+                "name": "Beisekov Aslan",
+                "__collections__": {}
+            },
+            "teacher1": {
+                "name": "Sabeshov Aslan",
+                "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
+                "id": "0",
+                "__collections__": {}
+            },
+            "teacher2": {
+                "name ": "Beisekov Aslan",
+                "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
+                "id": "1",
+                "name": "Beisekov Aslan",
+                "__collections__": {}
+            }
+        },
+        "data": {
+            "F5KdwVMw2k1dPGZqdezY": {
+                "duration": "sd",
+                "audience": "asa",
+                "img": "a",
+                "requirements": "e",
+                "about": "as",
+                "name": "d",
+                "language": "s",
+                "id": "course3",
+                "__collections__": {}
+            },
+            "vnAC9AOG9IcVAj1upFU1": {
+                "duration": "sd",
+                "audience": "asa",
+                "img": "a",
+                "requirements": "e",
+                "about": "as",
+                "name": "d",
+                "language": "s",
+                "id": "course3",
+                "__collections__": {}
+            }
+        },
+        "users": {
+            "HdtsjykSQufoSPunqTqi5u6XKw12": {
+                "uid": "HdtsjykSQufoSPunqTqi5u6XKw12",
+                "name": "tokh",
+                "email": "test5@test.ru",
+                "isSubscriber": true,
+                "enrolledCourses": [
+                    {
+                        "id": "id1",
+                        "name": "SampleCourse2",
+                        "teacher": "Teacher2",
+                        "img": "img/course_sample.jpg",
+                        "added": false,
+                        "isFavourite": false
+                    },
+                    {
+                        "id": "id2",
+                        "name": "SampleCourse3",
+                        "teacher": "Teacher3",
+                        "img": "img/course_sample.jpg",
+                        "added": false,
+                        "isFavourite": false
+                    },
+                    {
+                        "id": "id3",
+                        "name": "Figma",
+                        "teacher": "Teacher1",
+                        "img": "../img/figma.jpg",
+                        "added": false,
+                        "isFavourite": false
+                    }
+                ],
+                "__collections__": {}
+            },
+            "WqdiXSuFdSPcUmNPrAtNLrciZVu2": {
+                "uid": "WqdiXSuFdSPcUmNPrAtNLrciZVu2",
+                "name": "tokh2",
+                "email": "test6@test.ru",
+                "isSubscriber": true,
+                "enrolledCourses": [
+                    {
+                        "id": "id1",
+                        "name": "php , mySql ",
+                        "teacher": "Teacher2",
+                        "img": "../img/php.jpg",
+                        "added": false,
+                        "isFavourite": false
+                    }
+                ],
+                "__collections__": {}
+            }
+        }
+    }
+}

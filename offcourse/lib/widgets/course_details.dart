@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:offcourse/additional/colors.dart';
 import 'package:offcourse/models/course.dart';
 import 'package:offcourse/models/teachers.dart';
+import 'package:offcourse/widgets/course_detail_card.dart';
 import 'package:offcourse/widgets/course_page_upd.dart';
 import 'package:offcourse/widgets/payment.dart';
 
@@ -77,190 +78,209 @@ class CourseDetail extends StatelessWidget {
         ],
       ),
       body: Stack(children: [
-        ListView(children: [
-          IntrinsicHeight(
-              child: Hero(
-                  tag: name,
-                  child: Image.asset(assetPath, fit: BoxFit.contain))),
-          SizedBox(height: 20.0),
-          Padding(
-              padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 5),
-              child: Column(children: [
-                IntrinsicHeight(
-                    child: Center(
-                  child: Text(name,
-                      style: TextStyle(
-                          color: AppColors.black,
-                          fontFamily: 'Varela',
-                          fontSize: 24.0)),
-                )),
-                SizedBox(height: 20.0),
-                IntrinsicHeight(
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.all(15.0),
-                    decoration: BoxDecoration(
-                      color: AppColors.white,
-                      borderRadius: BorderRadius.circular(12.5),
-                      boxShadow: [
-                        BoxShadow(
-                            offset: const Offset(10, 20),
-                            blurRadius: 10,
-                            spreadRadius: 0,
-                            color: Colors.grey.withOpacity(.05)),
-                      ],
-                    ),
-                    child: Text(about,
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                            fontFamily: 'Varela',
-                            fontSize: 16.0,
-                            color: AppColors.black)),
-                  ),
-                )
-              ])),
-          SizedBox(height: 10.0),
-          SizedBox(
-            height: 50,
-            child: Container(
-              height: 100,
-              child: Builder(
-                // itemCount: teacher.length,
-                // itemBuilder: (BuildContext context, int index) {
-                builder: (BuildContext context) {
-                  return Scaffold(
-                      body: FutureBuilder<teacherModel>(
-                          future: teacherController.getTeacherById(teacher[0]),
-                          builder: (context, snapshot) {
-                            if (snapshot.hasData) {
-                              teacherModel teachers_data = snapshot.data!;
-                              print(
-                                  '9999999999999999999999999999999999999999999999999999999999999999999999');
-                              print(teacher[0]);
-                              print(teachers_data.name);
-                              return Container(
-                                  //TeacherLine
-                                  padding:
-                                      EdgeInsets.only(left: 15, right: 15.0),
-                                  width: MediaQuery.of(context).size.width,
-                                  height: 100,
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  CourseDetail(
-                                                      selectedCourse: course,
-                                                      assetPath: assetPath,
-                                                      teacher: teachers,
-                                                      about: about,
-                                                      duration: duration,
-                                                      language: language,
-                                                      audience: audience,
-                                                      requirements:
-                                                          requirements,
-                                                      name: name)));
-                                    },
-                                    child: Container(
+        Padding(
+            padding: EdgeInsets.only(bottom: 100),
+            child: ListView(children: [
+              IntrinsicHeight(
+                  child: Hero(
+                      tag: name,
+                      child: Image.asset(assetPath, fit: BoxFit.contain))),
+              SizedBox(height: 20.0),
+              Padding(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 5),
+                  child: Column(children: [
+                    IntrinsicHeight(
+                        child: Center(
+                      child: Text(name,
+                          style: TextStyle(
+                              color: AppColors.black,
+                              fontFamily: 'Varela',
+                              fontSize: 24.0)),
+                    )),
+                    SizedBox(height: 20.0),
+                    IntrinsicHeight(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        padding: const EdgeInsets.all(15.0),
+                        decoration: BoxDecoration(
+                          color: AppColors.offWhite,
+                          borderRadius: BorderRadius.circular(12.5),
+                          boxShadow: [
+                            BoxShadow(
+                                offset: const Offset(10, 20),
+                                blurRadius: 10,
+                                spreadRadius: 0,
+                                color: AppColors.accentColor2.withOpacity(.05)),
+                          ],
+                        ),
+                        child: Text(about,
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                                fontFamily: 'Varela',
+                                fontSize: 18.0,
+                                color: AppColors.black)),
+                      ),
+                    )
+                  ])),
+              SizedBox(height: 10.0),
+              SizedBox(
+                //Teacher
+                height: 50,
+                child: Container(
+                  height: 100,
+                  child: Builder(
+                    // itemCount: teacher.length,
+                    // itemBuilder: (BuildContext context, int index) {
+                    builder: (BuildContext context) {
+                      return Scaffold(
+                          body: FutureBuilder<teacherModel>(
+                              future:
+                                  teacherController.getTeacherById(teacher[0]),
+                              builder: (context, snapshot) {
+                                if (snapshot.hasData) {
+                                  teacherModel teachers_data = snapshot.data!;
+                                  print(
+                                      '9999999999999999999999999999999999999999999999999999999999999999999999');
+                                  print(teacher[0]);
+                                  print(teachers_data.runtimeType);
+                                  return Container(
+                                      //TeacherLine
+                                      padding: EdgeInsets.only(
+                                          left: 15, right: 15.0),
                                       width: MediaQuery.of(context).size.width,
-                                      height: 75,
-                                      padding: const EdgeInsets.all(15.0),
-                                      decoration: BoxDecoration(
-                                        color: AppColors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(12.5),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              offset: const Offset(10, 20),
-                                              blurRadius: 10,
-                                              spreadRadius: 0,
-                                              color:
-                                                  Colors.grey.withOpacity(.05)),
-                                        ],
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          const SizedBox(
-                                            width: 15,
+                                      height: 100,
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      CourseDetail(
+                                                          selectedCourse:
+                                                              course,
+                                                          assetPath: assetPath,
+                                                          teacher: teachers,
+                                                          about: about,
+                                                          duration: duration,
+                                                          language: language,
+                                                          audience: audience,
+                                                          requirements:
+                                                              requirements,
+                                                          name: name)));
+                                        },
+                                        child: Container(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          height: 75,
+                                          padding: const EdgeInsets.all(15.0),
+                                          decoration: BoxDecoration(
+                                            color: AppColors.offWhite,
+                                            borderRadius:
+                                                BorderRadius.circular(12.5),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                  offset: const Offset(10, 20),
+                                                  blurRadius: 10,
+                                                  spreadRadius: 0,
+                                                  color: AppColors.accentColor2
+                                                      .withOpacity(.05)),
+                                            ],
                                           ),
-                                          Text(
-                                            'Lenturer',
-                                            textAlign: TextAlign.center,
-                                            style: const TextStyle(
-                                                color: Colors.black87,
-                                                fontWeight: FontWeight.normal,
-                                                fontSize: 18),
+                                          child: Row(
+                                            children: [
+                                              const SizedBox(
+                                                width: 15,
+                                              ),
+                                              Text(
+                                                'Lenturer',
+                                                textAlign: TextAlign.center,
+                                                style: const TextStyle(
+                                                    color: Colors.black87,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    fontSize: 18),
+                                              ),
+                                              const Spacer(),
+                                              Text(teachers_data.name,
+                                                  textAlign: TextAlign.center,
+                                                  style: const TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 18,
+                                                  )),
+                                            ],
                                           ),
-                                          const Spacer(),
-                                          Text(teachers_data.name,
-                                              textAlign: TextAlign.center,
-                                              style: const TextStyle(
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 18,
-                                              )),
-                                        ],
-                                      ),
-                                    ),
-                                  ));
-                            } else if (snapshot.hasError) {
-                              throw snapshot.error!;
-                            } else {
-                              return Center(
-                                child: CircularProgressIndicator(),
-                              );
-                            }
-                          }));
+                                        ),
+                                      ));
+                                } else if (snapshot.hasError) {
+                                  throw snapshot.error!;
+                                } else {
+                                  return Center(
+                                    child: CircularProgressIndicator(),
+                                  );
+                                }
+                              }));
 
-                  //
-                },
-              ),
-            ),
-          ),
-          SizedBox(height: 5.0),
-          SizedBox(
-            height: 50,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 75,
-              padding: const EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                color: AppColors.white,
-                borderRadius: BorderRadius.circular(12.5),
-                boxShadow: [
-                  BoxShadow(
-                      offset: const Offset(10, 20),
-                      blurRadius: 10,
-                      spreadRadius: 0,
-                      color: Colors.grey.withOpacity(.05)),
-                ],
-              ),
-              child: Row(
-                children: [
-                  const SizedBox(
-                    width: 15,
+                      //
+                    },
                   ),
-                  Text(
-                    'Language',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18),
-                  ),
-                  const Spacer(),
-                  Text(language,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      )),
-                ],
+                ),
               ),
-            ),
-          ),
-        ]),
+              SizedBox(height: 5.0),
+              detailLine(text1: 'Language', text2: language),
+              SizedBox(height: 5.0),
+              detailLine(text1: 'Audience', text2: audience),
+              SizedBox(height: 5.0),
+              detailLine(text1: 'Requirements', text2: requirements),
+              // IntrinsicHeight(
+              //     child: Container(
+              //   padding: const EdgeInsets.only(
+              //     left: 15.0,
+              //     right: 15.0,
+              //   ),
+              //   child: Container(
+              //     width: MediaQuery.of(context).size.width,
+              //     padding: const EdgeInsets.only(
+              //       left: 15.0,
+              //       right: 15.0,
+              //     ),
+              //     decoration: BoxDecoration(
+              //       color: AppColors.offWhite,
+              //       borderRadius: BorderRadius.circular(12.5),
+              //       boxShadow: [
+              //         BoxShadow(
+              //             offset: const Offset(10, 20),
+              //             blurRadius: 10,
+              //             spreadRadius: 0,
+              //             color: AppColors.accentColor2.withOpacity(.05)),
+              //       ],
+              //     ),
+              //     child: Column(
+              //       children: [
+              //         const SizedBox(
+              //           width: 15,
+              //         ),
+              //         const Text(
+              //           'Requirements',
+              //           textAlign: TextAlign.start,
+              //           style: TextStyle(
+              //               color: Colors.black87,
+              //               fontWeight: FontWeight.w900,
+              //               fontSize: 18),
+              //         ),
+              //         SizedBox(height: 5.0),
+              //         Text(requirements,
+              //             textAlign: TextAlign.start,
+              //             style: TextStyle(
+              //                 fontFamily: 'Varela',
+              //                 fontSize: 18.0,
+              //                 color: AppColors.black)),
+              //       ],
+              //     ),
+              //   ),
+              // )),
+              SizedBox(height: 5.0),
+              detailLine(text1: 'Duration', text2: duration),
+            ])),
         SizedBox(height: 20.0),
         Positioned(
           left: 0,
