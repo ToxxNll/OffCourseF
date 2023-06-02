@@ -5,27 +5,30 @@ import 'package:get/get.dart';
 import '_build_category_card.dart';
 import '_build_popular_card.dart';
 
-ListView category(productList) {
+ListView category(categories) {
   return ListView.builder(
       padding: const EdgeInsets.only(left: 0),
-      itemCount: productList.length,
+      itemCount: categories.length,
       scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index) {
+        print(
+            'CategoryCategoryCategoryCategoryCategoryCategoryCategoryCategoryCategory');
+        print(category.runtimeType);
         return GestureDetector(
           onTap: () => {Get.to(ProductDetail)},
-          child: buildPopularCard(productList[index]),
+          child: buildPopularCard(categories[index]),
         );
       });
 }
 
-GridView mostPopularCategory(context, product) {
-  return GridView.count(
-    crossAxisCount: 2,
-    children: List.generate(product.length, (index) {
-      return GestureDetector(
-        onTap: () => Get.to(ProductDetail(product: product[index])),
-        child: buildCard(product[index]),
-      );
-    }),
-  );
-}
+// GridView mostPopularCategory(context, categories) {
+//   return GridView.count(
+//     crossAxisCount: 2,
+//     children: List.generate(categories.length, (index) {
+//       return GestureDetector(
+//         onTap: () => Get.to(ProductDetail(product: categories[index])),
+//         child: buildCard(categories[index]),
+//       );
+//     }),
+//   );
+// }

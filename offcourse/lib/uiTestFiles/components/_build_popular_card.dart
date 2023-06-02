@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:offcourse/models/category.dart';
 import 'package:offcourse/uiTestFiles/details/detail_page.dart';
 import 'package:offcourse/uiTestFiles/models/Product.dart';
 import 'dart:math' as math;
 
-buildPopularCard(Product product) {
+buildPopularCard(categoryModel category) {
   return Padding(
       padding: const EdgeInsets.all(2),
       child: GestureDetector(
-        onTap: () {
-          Get.to(ProductDetail(product: product));
-        },
-        child: _productCard(product),
+        // onTap: () {
+        //   Get.to(ProductDetail(product: product));
+        // },
+        child: _productCard(category),
       ));
 }
 
-Card _productCard(Product product) {
+Card _productCard(categoryModel category) {
+  print(
+      'CategoryCategoryCategoryCategoryCategoryCategoryCategoryCategoryCategory');
+  print(category.runtimeType);
   return Card(
     elevation: 8,
     color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
@@ -23,10 +27,10 @@ Card _productCard(Product product) {
     child: GridTile(
       child: Column(
         children: [
-          _imageIcon(product),
+          _imageIcon(category),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: _title(product),
+            child: _title(category),
           ),
         ],
       ),
@@ -34,9 +38,9 @@ Card _productCard(Product product) {
   );
 }
 
-Text _title(Product product) {
+Text _title(categoryModel category) {
   return Text(
-    product.title,
+    category.name,
     style: const TextStyle(
       fontWeight: FontWeight.bold,
       color: Colors.white,
@@ -44,13 +48,13 @@ Text _title(Product product) {
   );
 }
 
-Container _imageIcon(Product product) {
+Container _imageIcon(categoryModel category) {
   return Container(
     height: 90,
     width: 120,
     padding: const EdgeInsets.all(10),
     child: Image.asset(
-      product.image,
+      category.img,
       fit: BoxFit.cover,
       height: 90,
       width: 120,
