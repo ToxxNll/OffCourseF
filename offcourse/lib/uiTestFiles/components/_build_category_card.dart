@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:offcourse/additional/colors.dart';
+import 'package:offcourse/models/course2.dart';
+import 'package:offcourse/uiTestFiles/components/constant.dart';
 import 'package:offcourse/uiTestFiles/models/Product.dart';
 import 'package:offcourse/uiTestFiles/components/_star_rating.dart'
     show showStarRating;
 
-buildCard(Product product) {
-  return Padding(
+buildCard(CourseModel2 course) {
+  return
+      // IntrinsicHeight(child:
+      Padding(
     padding: const EdgeInsets.all(2),
     child: Card(
       elevation: 4,
@@ -16,49 +21,76 @@ buildCard(Product product) {
         child: GridTile(
           header: Padding(
             padding: const EdgeInsets.all(12),
-            child: imageIcon(product),
+            child: imageIcon(course),
           ),
-          footer: _buildPriceRating(product),
+          footer: _buildPriceRating(course),
           child: Container(),
         ),
       ),
     ),
   );
+  // );
 }
 
-Padding _buildPriceRating(Product product) {
+Text textShrink(String text, int characters) {
+  if (text.length > characters) {
+    text = text.substring(0, characters) + "..";
+  }
+
+  return Text(text);
+}
+
+Padding _buildPriceRating(CourseModel2 course) {
   return Padding(
     padding: const EdgeInsets.all(10),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _titlePrice(product),
+        _title(course),
         const SizedBox(height: 8),
-        showStarRating(3.0, product.color)
+        showStarRating(3.0, AppColors.pressableText)
       ],
     ),
   );
 }
 
-Text description(Product product) {
-  return Text(
-    product.description,
-    maxLines: 2,
-  );
+Text description(CourseModel2 course) {
+  return textShrink(course.about, 20);
 }
 
-Row _titlePrice(Product product) {
+// Column _title(CourseModel2 course) {
+//   return Column(
+//     children: [
+//       Text(
+//         course.name,
+//         style: const TextStyle(
+//           fontWeight: FontWeight.bold,
+//         ),
+//       ),
+//       const Spacer(),
+//       Text(
+//         course.duration,
+//         style: const TextStyle(
+//           fontWeight: FontWeight.bold,
+//           color: Colors.blue,
+//         ),
+//       )
+//     ],
+//   );
+// }
+
+Row _title(CourseModel2 course) {
   return Row(
     children: [
       Text(
-        product.title,
+        course.name,
         style: const TextStyle(
           fontWeight: FontWeight.bold,
         ),
       ),
       const Spacer(),
       Text(
-        '${product.price}',
+        '10000',
         style: const TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.blue,
@@ -68,9 +100,9 @@ Row _titlePrice(Product product) {
   );
 }
 
-Image imageIcon(Product product) {
+Image imageIcon(CourseModel2 course) {
   return Image.asset(
-    product.image,
+    course.img,
     fit: BoxFit.cover,
     height: 100,
     width: 100,

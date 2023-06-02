@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:offcourse/models/category.dart';
 import 'package:offcourse/models/teachers.dart';
 
 class CourseModel2 {
@@ -102,9 +103,9 @@ class CourseController2 {
     return teachers;
   }
 
-  Future<CourseModel2> getCourseById(String courseId) async {
+  Future<CourseModel2> getCourseById(categoryModel category) async {
     final DocumentSnapshot snapshot =
-        await _courseCatalogCollection.doc(courseId).get();
+        await _courseCatalogCollection.doc().get();
     if (snapshot.exists) {
       return CourseModel2(
           snapshot.get('id'),

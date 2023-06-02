@@ -25,7 +25,7 @@ Column detailBody(List<categoryModel> categories, BuildContext context) {
       const SizedBox(height: kSpace),
       section('Most popular'),
       const SizedBox(height: kSpace),
-      // Expanded(child: mostPopularCategory(context, categories))
+      Expanded(child: mostPopularCategory())
     ],
   );
 }
