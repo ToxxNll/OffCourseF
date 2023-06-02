@@ -3,21 +3,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:offcourse/pages/nav_pages/home_page.dart';
 
-Row buildActionBar() {
+Row buildActionBar(String text) {
   return Row(
     children: [
-      const Text(
-        'Discover',
+      Text(
+        text,
         style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
       ),
-      const Spacer(),
-      GestureDetector(
-        onTap: () => Get.to(const HomePage()),
-        child: const Icon(
-          CupertinoIcons.profile_circled,
-          size: 45,
-        ),
-      ),
+      // GestureDetector(
+      //   onTap: () => Get.to(const HomePage()),
+      //   child: const Icon(
+      //     CupertinoIcons.profile_circled,
+      //     size: 45,
+      //   ),
+      // ),
     ],
   );
 }

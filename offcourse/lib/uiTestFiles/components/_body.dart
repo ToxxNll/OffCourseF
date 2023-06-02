@@ -12,7 +12,7 @@ Column detailBody(List<categoryModel> categories, BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      buildActionBar(),
+      buildActionBar('Discovery'),
       const SizedBox(height: kSpace),
       buildSearchRow(),
       const SizedBox(height: kSpace),

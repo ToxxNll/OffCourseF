@@ -25,51 +25,53 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      body: FutureBuilder<List<categoryModel>>(
-        future: categoryController.getCategories(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            List<categoryModel> categories = snapshot.data!;
-            print('-----------------------------------------------------');
-            print(categories);
-            return SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: detailBody(categories, context),
-              ),
-            );
+        backgroundColor: Colors.grey.shade200,
+        body: Padding(
+          padding: const EdgeInsets.only(top: 25.0),
+          child: FutureBuilder<List<categoryModel>>(
+            future: categoryController.getCategories(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                List<categoryModel> categories = snapshot.data!;
+                print('-----------------------------------------------------');
+                print(categories);
+                return SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: detailBody(categories, context),
+                  ),
+                );
 
-            // ListView(padding: EdgeInsets.only(right: 5.0), children: [
-            //   Column(
-            //     children: List.generate(categories.length, (index) {
-            //       CourseModel2 course = courses[index];
+                // ListView(padding: EdgeInsets.only(right: 5.0), children: [
+                //   Column(
+                //     children: List.generate(categories.length, (index) {
+                //       CourseModel2 course = courses[index];
 
-            //       print(course.teachers);
-            //       return _buildCard(
-            //         course,
-            //         course.name,
-            //         course.teachers,
-            //         course.img,
-            //         course.about,
-            //         course.audience,
-            //         course.language,
-            //         course.requirements,
-            //         course.duration,
-            //         context,
-            //       );
-            //     }),
-            //   ),
-            // ]);
-          } else if (snapshot.hasError) {
-            throw snapshot.error!;
-          } else {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
-    );
+                //       print(course.teachers);
+                //       return _buildCard(
+                //         course,
+                //         course.name,
+                //         course.teachers,
+                //         course.img,
+                //         course.about,
+                //         course.audience,
+                //         course.language,
+                //         course.requirements,
+                //         course.duration,
+                //         context,
+                //       );
+                //     }),
+                //   ),
+                // ]);
+              } else if (snapshot.hasError) {
+                throw snapshot.error!;
+              } else {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
+          ),
+        ));
   }
 }

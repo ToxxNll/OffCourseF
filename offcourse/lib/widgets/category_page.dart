@@ -3,60 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:offcourse/models/course.dart';
 import 'package:offcourse/uiTestFiles/models/CourseCategory.dart';
+import 'package:offcourse/widgets/categoryToCourse.dart';
 import '../additional/colors.dart';
+import '../models/category.dart';
 import 'course_details.dart';
 
-List<CourseCategory> fetchCourseCategory() {
-  List<CourseCategory> categoryList = [];
-  String description =
-      "A product description is the marketing copy that explains what a product is and why it’s worth purchasing. The purpose of a product description is to supply customers with important information about the features and benefits of the product so they’re compelled to buy";
-  categoryList.add(CourseCategory(
-      count: "3",
-      image: '../img/javascript.jpg',
-      info: "",
-      tag: "Math",
-      title: "Math"));
-  categoryList.add(CourseCategory(
-      count: "1",
-      image: '../img/unity.jpg',
-      info: "",
-      tag: "English",
-      title: "English"));
-  categoryList.add(CourseCategory(
-      count: "30",
-      image: '../img/spring.jpg',
-      info: "",
-      tag: "History",
-      title: "History"));
-  categoryList.add(CourseCategory(
-      count: "5",
-      image: '../img/php.jpg',
-      info: "",
-      tag: "Geography",
-      title: "Geography"));
-  categoryList.add(CourseCategory(
-      count: "5",
-      image: '../img/laravel.jpeg',
-      info: "",
-      tag: "Economics",
-      title: "Economics"));
-  return categoryList;
-}
-
-class CoursePageV2 extends StatelessWidget {
+class CategoryPage extends StatelessWidget {
   final CourseController courseController = CourseController();
   Future<List<CourseModel>> courses = CourseController().getCourses();
-  List<CourseCategory> coursesCategory = fetchCourseCategory();
+  final CategoryController categoryController = CategoryController();
+  Future<List<categoryModel>> categories = CategoryController().getCategories();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFCFAF8),
-      body: FutureBuilder<List<CourseModel>>(
-        future: courseController.getCourses(),
+      body: FutureBuilder<List<categoryModel>>(
+        future: categoryController.getCategories(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            List<CourseModel> courses = snapshot.data!;
+            List<categoryModel> categories = snapshot.data!;
 
             return Container(
               padding: EdgeInsets.only(right: 15.0),
@@ -68,13 +34,13 @@ class CoursePageV2 extends StatelessWidget {
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 2,
-                children: List.generate(coursesCategory.length, (index) {
-                  CourseCategory coursesCat = coursesCategory[index];
+                children: List.generate(categories.length, (index) {
+                  categoryModel category = categories[index];
                   return _buildCard(
-                    coursesCat,
-                    coursesCat.title,
-                    coursesCat.tag,
-                    coursesCat.image,
+                    category,
+                    category.name,
+                    category.img,
+                    category.category_courses,
                     context,
                   );
                 }),
@@ -92,17 +58,17 @@ class CoursePageV2 extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(
-      course, String name, String teacher, String imgPath, context) {
+  Widget _buildCard(category, String name, String imgPath,
+      List<dynamic> category_courses, context) {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => CourseDetail(
-                      selectedCourse: course,
+                  builder: (context) => CategoryToCourseDetail(
+                      selectedCategory: category,
                       assetPath: imgPath,
-                      teacher: teacher,
+                      category_courses: category_courses,
                       name: name)));
             },
             child: Container(
@@ -125,11 +91,6 @@ class CoursePageV2 extends StatelessWidget {
                               image: DecorationImage(
                                   image: AssetImage(imgPath),
                                   fit: BoxFit.contain)))),
-                  Text(teacher,
-                      style: TextStyle(
-                          color: AppColors.mainColor,
-                          fontFamily: 'Varela',
-                          fontSize: 24.0)),
                   Text(name,
                       style: TextStyle(
                           color: Color(0xFF575E67),
