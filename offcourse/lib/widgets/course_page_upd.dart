@@ -29,11 +29,8 @@ class CoursePageUPD extends StatelessWidget {
             List<CourseModel2> courses = snapshot.data!;
             print('-----------------------------------------------------');
             print(courses);
-            return Container(
-              padding: EdgeInsets.only(right: 5.0),
-              width: MediaQuery.of(context).size.width * 0.95,
-              height: MediaQuery.of(context).size.height * 0.8,
-              child: Column(
+            return ListView(padding: EdgeInsets.only(right: 5.0), children: [
+              Column(
                 children: List.generate(courses.length, (index) {
                   CourseModel2 course = courses[index];
 
@@ -52,7 +49,7 @@ class CoursePageUPD extends StatelessWidget {
                   );
                 }),
               ),
-            );
+            ]);
           } else if (snapshot.hasError) {
             throw snapshot.error!;
           } else {

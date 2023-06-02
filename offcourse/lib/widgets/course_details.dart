@@ -193,8 +193,9 @@ class CourseDetail extends StatelessWidget {
                                               Text(
                                                 'Lenturer',
                                                 textAlign: TextAlign.center,
-                                                style: const TextStyle(
-                                                    color: Colors.black87,
+                                                style: TextStyle(
+                                                    color:
+                                                        AppColors.pressableText,
                                                     fontWeight:
                                                         FontWeight.normal,
                                                     fontSize: 18),
@@ -226,11 +227,23 @@ class CourseDetail extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 5.0),
-              detailLine(text1: 'Language', text2: language),
+              detailLine(
+                text1: 'Language',
+                text2: language,
+                icon: Icons.language,
+              ),
               SizedBox(height: 5.0),
-              detailLine(text1: 'Audience', text2: audience),
+              detailLine(
+                text1: 'Audience',
+                text2: audience,
+                icon: Icons.accessibility,
+              ),
               SizedBox(height: 5.0),
-              detailLine(text1: 'Requirements', text2: requirements),
+              detailLine(
+                text1: 'Requirements',
+                text2: requirements,
+                icon: Icons.short_text,
+              ),
               // IntrinsicHeight(
               //     child: Container(
               //   padding: const EdgeInsets.only(
@@ -279,7 +292,11 @@ class CourseDetail extends StatelessWidget {
               //   ),
               // )),
               SizedBox(height: 5.0),
-              detailLine(text1: 'Duration', text2: duration),
+              detailLine(
+                text1: 'Duration',
+                text2: duration,
+                icon: Icons.lock_clock,
+              ),
             ])),
         SizedBox(height: 20.0),
         Positioned(
