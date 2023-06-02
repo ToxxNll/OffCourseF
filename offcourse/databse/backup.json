@@ -18,33 +18,19 @@
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "course": "course1",
                             "language": "english",
-                            "teacher": "teacher1",
-                            "__collections__": {}
-                        }
-                    },
-                    "course_catalog": {
-                        "0": {
-                            "duration": "12 months",
-                            "audience": "For those who want to teach",
-                            "img": "img/unity.jpg",
-                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
-                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
-                            "name": "Geometry",
-                            "id": "course1",
-                            "language": "English",
-                            "teachers": "0",
                             "__collections__": {}
                         },
+                        
                         "1": {
-                            "duration": "eternity",
-                            "audience": "18+",
-                            "img": "img/flutter.jpg",
+                            "duration": "18 months",
+                            "audience": "For those who want to be programmer",
+                            "img": "img/figma.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "teachers": "teacher1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
-                            "name": "Flutter",
-                            "id": "course2",
+                            "name": "Figma",
                             "language": "Russian",
-                            "teachers": "1",
+                            "id": "course3",
                             "__collections__": {}
                         },
                         "2": {
@@ -52,35 +38,35 @@
                             "audience": "For those who want to be programmer",
                             "img": "img/figma.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "teachers": "teacher1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "name": "Figma",
-                            "id": "course3",
                             "language": "Russian",
-                            "teachers": "teacher1",
+                            "id": "course3",
                             "__collections__": {}
                         },
                         "3": {
                             "duration": "3 month",
                             "audience": "For those who want to be programmer",
-                            "img": "img/spring.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "teachers": "1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "name": "Laravel",
-                            "id": "course4",
                             "language": "Russian",
-                            "teachers": "1",
+                            "id": "course4",
+                            "img": "img/spring.jpg",
                             "__collections__": {}
                         },
                         "4": {
                             "duration": "6 months",
                             "audience": "For those who want to teach",
-                            "img": "img/php.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "teachers": "1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "name": "Discrete mathematics",
-                            "id": "course5",
                             "language": "Russian",
-                            "teachers": "1",
+                            "id": "course5",
+                            "img": "img/php.jpg",
                             "__collections__": {}
                         },
                         "5": {
@@ -88,11 +74,11 @@
                             "audience": "For those who want to be programmer",
                             "img": "img/php.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "teachers": "1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "name": "Php Master",
-                            "id": "course6",
                             "language": "Russian",
-                            "teachers": "1",
+                            "id": "course6",
                             "__collections__": {}
                         },
                         "6": {
@@ -100,11 +86,11 @@
                             "audience": "For those who want to be game developer",
                             "img": "img/unity.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "teachers": "1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "name": "Unity developer",
-                            "id": "course7",
                             "language": "English",
-                            "teachers": "1",
+                            "id": "course7",
                             "__collections__": {}
                         },
                         "7": {
@@ -112,11 +98,11 @@
                             "audience": "For those who want to be programmer",
                             "img": "img/spring.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "teachers": "1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "name": "Spring developer",
-                            "id": "course8",
                             "language": "Russian",
-                            "teachers": "1",
+                            "id": "course8",
                             "__collections__": {}
                         },
                         "8": {
@@ -124,25 +110,30 @@
                             "audience": "For those who want to be programmer",
                             "img": "img/javascript.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "teachers": "1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "name": "Flutter",
-                            "id": "course9",
                             "language": "Russian",
-                            "teachers": "1",
+                            "id": "course9",
                             "__collections__": {}
                         },
                         "9": {
+
                             "duration": "eternity",
+                            
+
                             "audience": "18+",
                             "img": "img/flutter.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+
                             "name": "Flutter",
-                            "id": "course10",
+                            "id": "course2",
                             "language": "Russian",
                             "teachers": "1",
                             "__collections__": {}
                         },
+                        
                         "10": {
                             "duration": "eternity",
                             "audience": "18+",
@@ -153,6 +144,8 @@
                             "id": "course11",
                             "language": "Russian",
                             "teachers": "1",
+
+                         
                             "__collections__": {}
                         }
 
@@ -281,4 +274,4 @@
             }
         }
     }
-}
+        }
