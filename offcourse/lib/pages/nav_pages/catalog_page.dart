@@ -82,7 +82,7 @@ class _CatalogPageState extends State<CatalogPage>
               child: TabBarView(controller: _tabController, children: [
                 //Тут категорий которые в таббере горизонтальном
                 CoursePageUPD(),
-                CatalogPage(),
+                CategoryPage(),
               ]))
         ],
       ),

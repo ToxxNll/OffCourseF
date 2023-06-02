@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:offcourse/models/course2.dart';
 import 'package:offcourse/models/user.dart';
 import 'package:offcourse/pages/nav_pages/main_page.dart';
 import 'package:offcourse/pages/nav_pages/my_courses.dart';
@@ -52,7 +53,7 @@ class EmptySection extends StatelessWidget {
 }
 
 class _SuccessState extends State<Success> {
-  late CourseModel course;
+  late CourseModel2 course;
   @override
   void initState() {
     super.initState();

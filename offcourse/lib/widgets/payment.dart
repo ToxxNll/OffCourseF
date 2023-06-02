@@ -2,6 +2,7 @@
 import 'package:awesome_card/awesome_card.dart';
 import 'package:flutter/material.dart';
 import 'package:offcourse/models/course.dart';
+import 'package:offcourse/models/course2.dart';
 import 'package:offcourse/pages/nav_pages/success.dart';
 import 'package:offcourse/widgets/defaultAppBar.dart';
 import 'package:offcourse/widgets/stickyLabel.dart';
@@ -17,7 +18,7 @@ class PaymentDetails extends StatefulWidget {
 }
 
 class _PaymentDetailsState extends State<PaymentDetails> {
-  late CourseModel course;
+  late CourseModel2 course;
   String cardNumber = "5450 7879 4864 7854",
       cardExpiry = "10/25",
       cardHolderName = "John Travolta",

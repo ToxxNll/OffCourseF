@@ -7,6 +7,7 @@ import 'package:offcourse/widgets/categoryToCourse.dart';
 import '../additional/colors.dart';
 import '../models/category.dart';
 import 'course_details.dart';
+import 'dart:math' as math;
 
 class CategoryPage extends StatelessWidget {
   final CourseController courseController = CourseController();
@@ -25,27 +26,25 @@ class CategoryPage extends StatelessWidget {
             List<categoryModel> categories = snapshot.data!;
 
             return Container(
-              padding: EdgeInsets.only(right: 15.0),
-              width: MediaQuery.of(context).size.width - 30.0,
-              height: MediaQuery.of(context).size.height - 100.0,
-              child: GridView.count(
-                crossAxisCount: 1,
-                primary: false,
-                crossAxisSpacing: 10.0,
-                mainAxisSpacing: 15.0,
-                childAspectRatio: 2,
-                children: List.generate(categories.length, (index) {
-                  categoryModel category = categories[index];
-                  return _buildCard(
-                    category,
-                    category.name,
-                    category.img,
-                    category.category_courses,
-                    context,
-                  );
-                }),
-              ),
-            );
+                width: MediaQuery.of(context)
+                    .size
+                    .width, // Adjust the width as per your requirement
+                height: MediaQuery.of(context).size.height,
+                child: GridView.count(
+                  // childAspectRatio: 0.8,
+                  crossAxisCount: 3,
+                  padding: EdgeInsets.all(5.0),
+                  children: List.generate(categories.length, (index) {
+                    categoryModel category = categories[index];
+                    return _buildCard(
+                      category,
+                      category.name,
+                      category.img,
+                      category.category_courses,
+                      context,
+                    );
+                  }),
+                ));
           } else if (snapshot.hasError) {
             throw snapshot.error!;
           } else {
@@ -62,43 +61,58 @@ class CategoryPage extends StatelessWidget {
       List<dynamic> category_courses, context) {
     return Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
-        child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => CategoryToCourseDetail(
-                      selectedCategory: category,
-                      assetPath: imgPath,
-                      category_courses: category_courses,
-                      name: name)));
-            },
-            child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 3.0,
-                          blurRadius: 5.0)
-                    ],
-                    color: Colors.white),
-                child: Column(children: [
-                  Hero(
-                      tag: name,
-                      child: Container(
-                          height: 150.0,
-                          width: 150 * 5,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage(imgPath),
-                                  fit: BoxFit.contain)))),
-                  Text(name,
-                      style: TextStyle(
-                          color: Color(0xFF575E67),
-                          fontFamily: 'Varela',
-                          fontSize: 14.0)),
-                  Padding(
-                      padding: EdgeInsets.all(1.0),
-                      child: Container(color: Color(0xFFEBEBEB), height: 1.0)),
-                ]))));
+        child: Container(
+            // width: 200, // Adjust the width as per your requirement
+            // height: 100,
+            child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => CategoryToCourseDetail(
+                          selectedCategory: category,
+                          assetPath: imgPath,
+                          category_courses: category_courses,
+                          name: name)));
+                },
+                child: Container(
+                    child: Card(
+                  elevation: 8,
+                  color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+                      .withOpacity(0.80),
+                  child: GridTile(
+                    child: Column(
+                      children: [
+                        _imageIcon(imgPath),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: _title(name),
+                        ),
+                      ],
+                    ),
+                  ),
+                )))));
   }
+}
+
+Container _imageIcon(String imgPath) {
+  return Container(
+    height: 90,
+    width: 120,
+    padding: const EdgeInsets.all(10),
+    child: Image.asset(
+      imgPath,
+      fit: BoxFit.cover,
+      height: 90,
+      width: 120,
+    ),
+  );
+}
+
+Text _title(String name) {
+  return Text(
+    name,
+    style: const TextStyle(
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    ),
+  );
 }

@@ -102,17 +102,6 @@ class CoursePageUPD extends StatelessWidget {
                 child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Padding(
-                      //     padding: EdgeInsets.all(5.0),
-                      //     child: Row(
-                      //         mainAxisAlignment: MainAxisAlignment.end,
-                      //         children: [
-                      //           isFavourite
-                      //               ? Icon(Icons.favorite_border,
-                      //                   color: AppColors.mainColor)
-                      //               : Icon(Icons.favorite,
-                      //                   color: AppColors.mainColor)
-                      //         ])),
                       Hero(
                           tag: name,
                           child: Container(
@@ -122,24 +111,6 @@ class CoursePageUPD extends StatelessWidget {
                                   image: DecorationImage(
                                       image: AssetImage(imgPath),
                                       fit: BoxFit.contain)))),
-                      // SizedBox(height: 50.0),
-                      // Container(
-                      //   height:
-                      //       100.0, // Specify a fixed height for the ListView container
-                      //   child: ListView.builder(
-                      //     itemCount: teachers.length,
-                      //     itemBuilder: (BuildContext context, int index) {
-                      //       return Text(
-                      //         course.teachers[index],
-                      //         style: TextStyle(
-                      //           color: AppColors.mainColor,
-                      //           fontFamily: 'Varela',
-                      //           fontSize: 14.0,
-                      //         ),
-                      //       );
-                      //     },
-                      //   ),
-                      // ),
                       Padding(
                           padding: EdgeInsets.only(left: 4.0, top: 5),
                           child: Column(
@@ -190,32 +161,7 @@ class CoursePageUPD extends StatelessWidget {
                                   child: Container(
                                       color: Color(0xFFEBEBEB), height: 1.0)),
                             ],
-                          )
-                          // Padding(
-                          //     padding: EdgeInsets.only(left: 5.0, right: 5.0),
-                          //     child: Row(
-                          //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          //         children: [
-                          //           if (!added) ...[
-                          //             Icon(Icons.shopping_basket,
-                          //                 color: AppColors.mainColor, size: 12.0),
-                          //             Text('Add to cart',
-                          //                 style: TextStyle(
-                          //                     fontFamily: 'Varela',
-                          //                     color: AppColors.mainColor,
-                          //                     fontSize: 12.0))
-                          //           ],
-                          //           if (added) ...[
-                          //             Icon(Icons.shopping_basket,
-                          //                 color: AppColors.mainColor, size: 12.0),
-                          //             Text('Add to cart',
-                          //                 style: TextStyle(
-                          //                     fontFamily: 'Varela',
-                          //                     color: AppColors.mainColor,
-                          //                     fontSize: 12.0)),
-                          //           ]
-                          //         ]))
-                          )
+                          ))
                     ]))));
   }
 }

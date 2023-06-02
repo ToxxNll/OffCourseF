@@ -103,23 +103,31 @@ class CourseController2 {
     return teachers;
   }
 
-  Future<CourseModel2> getCourseById(categoryModel category) async {
-    final DocumentSnapshot snapshot =
-        await _courseCatalogCollection.doc().get();
-    if (snapshot.exists) {
-      return CourseModel2(
-          snapshot.get('id'),
-          snapshot.get('name'),
-          snapshot.get('teachers'),
-          snapshot.get('img'),
-          snapshot.get('about'),
-          snapshot.get('audience'),
-          snapshot.get('duration'),
-          snapshot.get('language'),
-          snapshot.get('requirements'));
-    } else {
-      throw Exception('Teacher not found');
+  Future<List<CourseModel2>> getCourseById(List<dynamic> categories) async {
+    await initializeCourseCatalogCollection();
+    List<String> categoriesStr = categories.map((e) => e.toString()).toList();
+    List<CourseModel2> courses = [];
+    for (var category in categoriesStr) {
+      final DocumentSnapshot snapshot =
+          await _courseCatalogCollection.doc(category).get();
+      if (snapshot.exists) {
+        {
+          courses.add(CourseModel2(
+              snapshot.get('id'),
+              snapshot.get('name'),
+              snapshot.get('teachers'),
+              snapshot.get('img'),
+              snapshot.get('about'),
+              snapshot.get('audience'),
+              snapshot.get('duration'),
+              snapshot.get('language'),
+              snapshot.get('requirements')));
+        }
+      } else {
+        throw Exception('Teacher not found');
+      }
     }
+    return courses;
   }
 
   Future<void> addCourse(CourseModel2 course) async {

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:offcourse/models/course.dart';
+import 'package:offcourse/models/course2.dart';
 
 class UserModel {
   static const ID = "uid";
@@ -10,7 +11,7 @@ class UserModel {
   late String _email;
   late String _name;
   late bool _is_Subscriber;
-  List<CourseModel>? _enrolledCourses;
+  List<CourseModel2>? _enrolledCourses;
 
   UserModel(this._id, this._email, this._name, this._is_Subscriber,
       [this._enrolledCourses = const []]);
@@ -19,7 +20,7 @@ class UserModel {
   String get id => _id;
   String get name => _name;
   bool get is_Subscriber => _is_Subscriber;
-  List<CourseModel>? get enrolledCourses => _enrolledCourses;
+  List<CourseModel2>? get enrolledCourses => _enrolledCourses;
 
   // UserModel.fromSnapshot(DocumentSnapshot snapshot) {
   //   _email = snapshot.data()['Identifier'];
@@ -35,13 +36,14 @@ class UserModel {
     };
   }
 
-  Future<List<CourseModel>?> _getEnrolledCourses() async {
+  Future<List<CourseModel2>?> _getEnrolledCourses() async {
     final User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       final CollectionReference users =
           FirebaseFirestore.instance.collection('users');
       final DocumentSnapshot userDoc = await users.doc(user.uid).get();
-      final List<CourseModel>? enrolledCourses = userDoc.get('enrolledCourses');
+      final List<CourseModel2>? enrolledCourses =
+          userDoc.get('enrolledCourses');
       return enrolledCourses;
     }
     return null;
