@@ -102,6 +102,25 @@ class CourseController2 {
     return teachers;
   }
 
+  Future<CourseModel2> getCourseById(String courseId) async {
+    final DocumentSnapshot snapshot =
+        await _courseCatalogCollection.doc(courseId).get();
+    if (snapshot.exists) {
+      return CourseModel2(
+          snapshot.get('id'),
+          snapshot.get('name'),
+          snapshot.get('teachers'),
+          snapshot.get('img'),
+          snapshot.get('about'),
+          snapshot.get('audience'),
+          snapshot.get('duration'),
+          snapshot.get('language'),
+          snapshot.get('requirements'));
+    } else {
+      throw Exception('Teacher not found');
+    }
+  }
+
   Future<void> addCourse(CourseModel2 course) async {
     await _courseCatalogCollection.add({
       'name': course.name,
