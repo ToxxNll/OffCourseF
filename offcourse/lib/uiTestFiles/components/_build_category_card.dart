@@ -7,9 +7,8 @@ import 'package:offcourse/uiTestFiles/components/_star_rating.dart'
     show showStarRating;
 
 buildCard(CourseModel2 course) {
-  return
-      // IntrinsicHeight(child:
-      Padding(
+  return IntrinsicHeight(
+      child: Padding(
     padding: const EdgeInsets.all(2),
     child: Card(
       elevation: 4,
@@ -28,8 +27,7 @@ buildCard(CourseModel2 course) {
         ),
       ),
     ),
-  );
-  // );
+  ));
 }
 
 Text textShrink(String text, int characters) {
@@ -48,7 +46,7 @@ Padding _buildPriceRating(CourseModel2 course) {
       children: [
         _title(course),
         const SizedBox(height: 8),
-        showStarRating(3.0, AppColors.pressableText)
+        courseAudience(course)
       ],
     ),
   );
@@ -56,6 +54,10 @@ Padding _buildPriceRating(CourseModel2 course) {
 
 Text description(CourseModel2 course) {
   return textShrink(course.about, 20);
+}
+
+Text courseAudience(CourseModel2 course) {
+  return textShrink(course.audience, 20);
 }
 
 // Column _title(CourseModel2 course) {
@@ -90,7 +92,7 @@ Row _title(CourseModel2 course) {
       ),
       const Spacer(),
       Text(
-        '10000',
+        '',
         style: const TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.blue,
