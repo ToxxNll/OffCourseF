@@ -9,7 +9,7 @@ import '../models/course2.dart';
 import 'course_details.dart';
 
 class EnrolledCoursePage extends StatelessWidget {
-  final CourseController courseController = CourseController();
+  // final CourseController courseController = CourseController();
   // Stream<List<CourseModel2>> getEnrolledCoursesStream() {
   //   final user = FirebaseAuth.instance.currentUser;
   //   return FirebaseFirestore.instance
@@ -46,19 +46,12 @@ class EnrolledCoursePage extends StatelessWidget {
           if (snapshot.hasData) {
             List<CourseModel2> courses = snapshot.data!;
             print(courses);
-            return Container(
-              padding: EdgeInsets.only(right: 15.0),
-              width: MediaQuery.of(context).size.width - 30.0,
-              height: MediaQuery.of(context).size.height - 50.0,
-              child: GridView.count(
-                crossAxisCount: 2,
-                primary: false,
-                crossAxisSpacing: 10.0,
-                mainAxisSpacing: 15.0,
-                childAspectRatio: 0.8,
+            return ListView(padding: EdgeInsets.only(right: 5.0), children: [
+              Column(
                 children: List.generate(courses.length, (index) {
                   CourseModel2 course = courses[index];
 
+                  print(course.teachers);
                   return _buildCard(
                     course,
                     course.name,
@@ -73,7 +66,7 @@ class EnrolledCoursePage extends StatelessWidget {
                   );
                 }),
               ),
-            );
+            ]);
           } else if (snapshot.hasError) {
             throw snapshot.error!;
           } else {
@@ -188,4 +181,37 @@ class EnrolledCoursePage extends StatelessWidget {
                           ))
                     ]))));
   }
+}
+
+Future<bool?> checkUserSubscription() async {
+  final User user = FirebaseAuth.instance.currentUser!;
+  final userRef = FirebaseFirestore.instance.collection('users').doc(user.uid);
+
+  final doc = await userRef.get();
+  if (doc.exists) {
+    return doc.data()?['isSubscriber'];
+  }
+
+  return null;
+}
+
+addUserCourse(CourseModel2 course) {
+  final User user =
+      FirebaseAuth.instance.currentUser!; // get current user object
+  final userRef = FirebaseFirestore.instance.collection('users').doc(user.uid);
+  userRef.get().then((doc) async {
+    if (doc.exists) {
+      bool isSubscriber = doc.data()!['isSubscriber'];
+      if (isSubscriber) {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.uid)
+            .update({
+          'enrolledCourses': FieldValue.arrayUnion([course.toMap()]),
+        });
+      }
+
+      return isSubscriber;
+    }
+  });
 }

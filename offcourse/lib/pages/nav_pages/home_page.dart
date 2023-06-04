@@ -33,8 +33,8 @@ class _HomePageState extends State<HomePage> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 List<categoryModel> categories = snapshot.data!;
-                print('-----------------------------------------------------');
-                print(categories);
+                // print('-----------------------------------------------------');
+                // print(categories);
                 return SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),

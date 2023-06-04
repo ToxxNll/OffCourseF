@@ -44,7 +44,7 @@ class CategoryToCourseDetail extends StatelessWidget {
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                 buildActionBar('Catalog'),
                 const SizedBox(height: kSpace),
-                buildSearchRow(),
+                // buildSearchRow(),
                 const SizedBox(height: kSpace),
               ]),
               Expanded(

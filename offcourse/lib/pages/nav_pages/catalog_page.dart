@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:offcourse/models/category.dart';
+import 'package:offcourse/models/course2.dart';
+import 'package:offcourse/uiTestFiles/components/_search_filter_view.dart';
 import 'package:offcourse/widgets/course_page.dart';
 import 'package:offcourse/widgets/category_page.dart';
 import 'package:offcourse/widgets/course_page_upd.dart';
 
 import '../../additional/colors.dart';
 import '../../uiTestFiles/components/_action_bar.dart';
-import '../../uiTestFiles/components/_search_filter_view.dart';
 import '../../uiTestFiles/components/constant.dart';
 
 class CatalogPage extends StatefulWidget {
@@ -15,45 +17,70 @@ class CatalogPage extends StatefulWidget {
 
 class _CatalogPageState extends State<CatalogPage>
     with SingleTickerProviderStateMixin {
+  late Future<List<CourseModel2>> courseFuture;
+  late Future<List<CourseModel2>> filteredCourses;
+  late Future<List<categoryModel>> categoryFuture;
+  late Future<List<categoryModel>> filteredCategories;
   late TabController _tabController;
+  TextEditingController searchController = TextEditingController();
+
+  void _filterCoursesAndCategories(String query) {
+    setState(() {
+      filteredCategories = categoryFuture.then((categories) {
+        return categories.where((category) {
+          final name = category.name.toLowerCase();
+          final searchQuery = query.toLowerCase();
+          return name.contains(searchQuery);
+        }).toList();
+      });
+    });
+    filteredCourses = courseFuture.then((courses) {
+      return courses.where((course) {
+        final title = course.name.toLowerCase();
+        final author = course.duration.toLowerCase();
+        final searchQuery = query.toLowerCase();
+        return title.contains(searchQuery) || author.contains(searchQuery);
+      }).toList();
+    });
+  }
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+    courseFuture = CourseController2().getCourses();
+    categoryFuture = CategoryController().getCategories();
+  }
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   backgroundColor: Colors.white,
-        //   elevation: 0.0,
-        //   title: Text('Catalog',
-        //       style: TextStyle(
-        //           fontFamily: 'Varela',
-        //           fontSize: 30.0,
-        //           color: Color(0xFF545D68))),
-        // ),
-        body: Padding(
-      padding: const EdgeInsets.only(top: 50.0),
-      child: ListView(
-        padding: EdgeInsets.only(left: 10.0),
-        children: <Widget>[
-          Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            buildActionBar('Catalog'),
-            const SizedBox(height: kSpace),
-            buildSearchRow(),
-            const SizedBox(height: kSpace),
-          ]),
-          SizedBox(height: 5.0),
-          // Text('Categories',
-          //     style: TextStyle(
-          //         fontFamily: 'Varela',
-          //         fontSize: 42.0,
-          //         fontWeight: FontWeight.bold)),
-          // SizedBox(height: 15.0),
-          TabBar(
+      body: Padding(
+        padding: const EdgeInsets.only(top: 50.0),
+        child: ListView(
+          padding: EdgeInsets.only(left: 10.0),
+          children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                buildActionBar('Catalog'),
+                const SizedBox(height: kSpace),
+                SearchField(
+                  searchController: searchController,
+                  onSearchTextChanged: _filterCoursesAndCategories,
+                ),
+                const SizedBox(height: kSpace),
+              ],
+            ),
+            SizedBox(height: 5.0),
+            TabBar(
               controller: _tabController,
               indicatorColor: Colors.transparent,
               labelColor: AppColors.mainColor,
@@ -62,30 +89,93 @@ class _CatalogPageState extends State<CatalogPage>
               unselectedLabelColor: Color(0xFFCDCDCD),
               tabs: [
                 Tab(
-                  child: Text('Catalog',
-                      style: TextStyle(
-                        fontFamily: 'Varela',
-                        fontSize: 21.0,
-                      )),
+                  child: Text(
+                    'Catalog',
+                    style: TextStyle(
+                      fontFamily: 'Varela',
+                      fontSize: 21.0,
+                    ),
+                  ),
                 ),
                 Tab(
-                  child: Text('Categories',
-                      style: TextStyle(
-                        fontFamily: 'Varela',
-                        fontSize: 21.0,
-                      )),
-                )
-              ]),
-          Container(
+                  child: Text(
+                    'Categories',
+                    style: TextStyle(
+                      fontFamily: 'Varela',
+                      fontSize: 21.0,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Container(
               height: MediaQuery.of(context).size.height,
               width: double.infinity,
-              child: TabBarView(controller: _tabController, children: [
-                //Тут категорий которые в таббере горизонтальном
-                CoursePageUPD(),
-                CategoryPage(),
-              ]))
-        ],
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  FutureBuilder<List<CourseModel2>>(
+                    future: courseFuture,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        List<CourseModel2> courses = snapshot.data!;
+                        List<CourseModel2> filteredCourses = courses;
+                        if (searchController.text.isNotEmpty) {
+                          filteredCourses = courses.where((course) {
+                            final title = course.name.toLowerCase();
+                            final author = course.duration.toLowerCase();
+                            final searchQuery =
+                                searchController.text.toLowerCase();
+                            return title.contains(searchQuery) ||
+                                author.contains(searchQuery);
+                          }).toList();
+                        }
+                        print(filteredCourses.runtimeType);
+                        return CoursePageUPD(
+                          searchController: searchController,
+                          courses: filteredCourses,
+                        );
+                      } else if (snapshot.hasError) {
+                        return Text('Error: ${snapshot.error}');
+                      } else {
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                    },
+                  ),
+                  FutureBuilder<List<categoryModel>>(
+                    future: categoryFuture,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        List<categoryModel> categories = snapshot.data!;
+                        List<categoryModel> filteredCategories = categories;
+                        if (searchController.text.isNotEmpty) {
+                          filteredCategories = categories.where((category) {
+                            final title = category.name.toLowerCase();
+                            final searchQuery =
+                                searchController.text.toLowerCase();
+                            return title.contains(searchQuery);
+                          }).toList();
+                        }
+                        return CategoryPage(
+                            categories: filteredCategories,
+                            searchController: searchController);
+                      } else if (snapshot.hasError) {
+                        return Text('Error: ${snapshot.error}');
+                      } else {
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

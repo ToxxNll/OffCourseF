@@ -9,50 +9,103 @@ import '../models/category.dart';
 import 'course_details.dart';
 import 'dart:math' as math;
 
-class CategoryPage extends StatelessWidget {
+class CategoryPage extends StatefulWidget {
+  final TextEditingController searchController;
+  final List<categoryModel> categories;
+
+  const CategoryPage(
+      {Key? key, required this.searchController, required this.categories})
+      : super(key: key);
+
+  @override
+  State<CategoryPage> createState() => _CategoryPageState();
+}
+
+class _CategoryPageState extends State<CategoryPage> {
   final CourseController courseController = CourseController();
   Future<List<CourseModel>> courses = CourseController().getCourses();
   final CategoryController categoryController = CategoryController();
-  Future<List<categoryModel>> categories = CategoryController().getCategories();
+  // Future<List<categoryModel>> categories = CategoryController().getCategories();
+  late Future<List<categoryModel>> categories;
+  late List<categoryModel> allCourses;
+  late List<categoryModel> filteredCourses;
+  late Color randomColor;
+
+  @override
+  void initState() {
+    super.initState();
+    randomColor = Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
+        .withOpacity(0.80);
+  }
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     backgroundColor: Color(0xFFFCFAF8),
+  //     body: FutureBuilder<List<categoryModel>>(
+  //       future: categoryController.getCategories(),
+  //       builder: (context, snapshot) {
+  //         if (snapshot.hasData) {
+  //           List<categoryModel> categories = snapshot.data!;
+
+  //           return Container(
+  //               width: MediaQuery.of(context)
+  //                   .size
+  //                   .width, // Adjust the width as per your requirement
+  //               height: MediaQuery.of(context).size.height,
+  //               child: GridView.count(
+  //                 // childAspectRatio: 0.8,
+  //                 crossAxisCount: 3,
+  //                 padding: EdgeInsets.all(5.0),
+  //                 children: List.generate(categories.length, (index) {
+  //                   categoryModel category = categories[index];
+  //                   return
+  //                 }),
+  //               ));
+  //         } else if (snapshot.hasError) {
+  //           throw snapshot.error!;
+  //         } else {
+  //           return Center(
+  //             child: CircularProgressIndicator(),
+  //           );
+  //         }
+  //       },
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFCFAF8),
-      body: FutureBuilder<List<categoryModel>>(
-        future: categoryController.getCategories(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            List<categoryModel> categories = snapshot.data!;
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+          ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 3,
+              padding: EdgeInsets.all(5.0),
+              children: List.generate(
+                widget.categories.length,
+                (index) {
+                  categoryModel category = widget.categories[index];
+                  return _buildCard(
+                    // itemCount: widget.categories.length,
+                    // itemBuilder: (context, index) {
+                    //   categoryModel category = widget.categories[index];
 
-            return Container(
-                width: MediaQuery.of(context)
-                    .size
-                    .width, // Adjust the width as per your requirement
-                height: MediaQuery.of(context).size.height,
-                child: GridView.count(
-                  // childAspectRatio: 0.8,
-                  crossAxisCount: 3,
-                  padding: EdgeInsets.all(5.0),
-                  children: List.generate(categories.length, (index) {
-                    categoryModel category = categories[index];
-                    return _buildCard(
-                      category,
-                      category.name,
-                      category.img,
-                      category.category_courses,
-                      context,
-                    );
-                  }),
-                ));
-          } else if (snapshot.hasError) {
-            throw snapshot.error!;
-          } else {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
+                    category,
+                    category.name,
+                    category.img,
+                    category.category_courses,
+                    context,
+                  );
+                },
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
@@ -76,8 +129,7 @@ class CategoryPage extends StatelessWidget {
                 child: Container(
                     child: Card(
                   elevation: 8,
-                  color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
-                      .withOpacity(0.80),
+                  color: randomColor.withOpacity(0.80),
                   child: GridTile(
                     child: Column(
                       children: [

@@ -1,6 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:offcourse/additional/colors.dart';
+import 'package:offcourse/uiTestFiles/components/_action_bar.dart';
+import 'package:offcourse/uiTestFiles/components/_search_filter_view.dart';
+import 'package:offcourse/uiTestFiles/components/constant.dart';
 
 import '../../widgets/enrolledCourse_page.dart';
 
@@ -48,25 +52,39 @@ class _MyCoursesState extends State<MyCoursesPage> {
       return Container();
     } else if (_isSubscribed) {
       return Scaffold(
-          appBar: AppBar(
-            title: Text('My Courses'),
-          ),
-          body: ListView(
-            padding: EdgeInsets.only(left: 20.0),
-            children: <Widget>[
-              SizedBox(height: 15.0),
-              Text('The courses you participate in',
-                  style: TextStyle(
-                      fontFamily: 'Varela',
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.bold)),
-              SizedBox(height: 15.0),
-              Container(
-                height: MediaQuery.of(context).size.height - 150.0,
-                child: EnrolledCoursePage(),
-              ),
-            ],
-          ));
+          body:
+              ListView(padding: EdgeInsets.only(left: 20.0), children: <Widget>[
+        SizedBox(height: 15.0),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // buildActionBar('Catalog'),
+            // const SizedBox(height: kSpace),
+            // buildSearchRow(),
+            // const SizedBox(height: kSpace),
+            Container(
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    // borderRadius: BorderRadius.circular(15.0),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.blueAccent.withOpacity(0.1),
+                          spreadRadius: 1.0,
+                          blurRadius: 2.0)
+                    ], color: AppColors.offWhite),
+                child: Text('The courses you participate in',
+                    style: TextStyle(
+                        fontFamily: 'Varela',
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold))),
+            SizedBox(height: 15.0),
+            Container(
+              height: MediaQuery.of(context).size.height - 150.0,
+              child: EnrolledCoursePage(),
+            ),
+          ],
+        )
+      ]));
     } else {
       return Scaffold(
         appBar: AppBar(

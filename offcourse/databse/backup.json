@@ -18,19 +18,67 @@
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "course": "course1",
                             "language": "english",
+                            "teacher": "teacher1",
+                            "__collections__": {}
+                        }
+                    },
+                    "category": {
+                        "Language": {
+                            "category_courses": [
+                                "0",
+                                "1",
+                                "3"
+                            ],
+                            "img": "img/javascript.jpg",
+                            "name": "Language",
                             "__collections__": {}
                         },
-                        
+                        "Geography": {
+                            "category_courses": [
+                                "2",
+                                "4",
+                                "10"
+                            ],
+                            "img": "img/flutter.jpg",
+                            "name": "Geography",
+                            "__collections__": {}
+                        },
+                        "Programming": {
+                            "name": "Programming",
+                            "category_courses": [
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9"
+                            ],
+                            "img": "img/spring.jpg",
+                            "__collections__": {}
+                        }
+                    },
+                    "course_catalog": {
+                        "0": {
+                            "id": "course1",
+                            "teachers": "0",
+                            "duration": "",
+                            "audience": "",
+                            "img": "",
+                            "requirements": "",
+                            "about": "",
+                            "name": "",
+                            "language": "",
+                            "__collections__": {}
+                        },
                         "1": {
-                            "duration": "18 months",
-                            "audience": "For those who want to be programmer",
-                            "img": "img/figma.jpg",
+                            "duration": "eternity",
+                            "audience": "18+",
+                            "img": "img/flutter.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
-                            "teachers": "teacher1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
-                            "name": "Figma",
+                            "name": "Flutter",
+                            "id": "course2",
+                            "teachers": "1",
                             "language": "Russian",
-                            "id": "course3",
                             "__collections__": {}
                         },
                         "2": {
@@ -46,15 +94,15 @@
                             "__collections__": {}
                         },
                         "3": {
-                            "duration": "3 month",
-                            "audience": "For those who want to be programmer",
-                            "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
                             "teachers": "1",
-                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
-                            "name": "Laravel",
-                            "language": "Russian",
                             "id": "course4",
-                            "img": "img/spring.jpg",
+                            "duration": "",
+                            "audience": "",
+                            "img": "",
+                            "requirements": "",
+                            "about": "",
+                            "name": "",
+                            "language": "",
                             "__collections__": {}
                         },
                         "4": {
@@ -118,37 +166,29 @@
                             "__collections__": {}
                         },
                         "9": {
-
                             "duration": "eternity",
-                            
-
                             "audience": "18+",
                             "img": "img/flutter.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
-                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
-
-                            "name": "Flutter",
-                            "id": "course2",
-                            "language": "Russian",
                             "teachers": "1",
+                            "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                            "name": "Flutter",
+                            "language": "Russian",
+                            "id": "course10",
                             "__collections__": {}
                         },
-                        
                         "10": {
                             "duration": "eternity",
                             "audience": "18+",
                             "img": "img/flutter.jpg",
                             "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                            "teachers": "1",
                             "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
                             "name": "Flutter",
-                            "id": "course11",
                             "language": "Russian",
-                            "teachers": "1",
-
-                         
+                            "id": "course11",
                             "__collections__": {}
                         }
-
                     }
                 }
             },
@@ -180,6 +220,7 @@
                 "__collections__": {}
             },
             "1": {
+                "name ": "Beisekov Aslan",
                 "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
                 "name": "Beisekov Aslan",
                 "__collections__": {}
@@ -271,7 +312,49 @@
                     }
                 ],
                 "__collections__": {}
+            },
+            "iF536wGpfjR5uoezsltuwj0AuBY2": {
+                "uid": "iF536wGpfjR5uoezsltuwj0AuBY2",
+                "name": "Toxx1",
+                "email": "test1@test.test",
+                "isSubscriber": true,
+                "enrolledCourses": [
+                    {
+                        "duration": "eternity",
+                        "img": "img/flutter.jpg",
+                        "audience": "18+",
+                        "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. ",
+                        "teachers": "1",
+                        "name": "Flutter",
+                        "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                        "language": "Russian",
+                        "id": "course2"
+                    },
+                    {
+                        "id": "course3",
+                        "name": "Figma",
+                        "teachers": "teacher1",
+                        "img": "img/figma.jpg",
+                        "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                        "audience": "For those who want to be programmer",
+                        "duration": "18 months",
+                        "language": "Russian",
+                        "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. "
+                    },
+                    {
+                        "id": "course11",
+                        "name": "Flutter",
+                        "teachers": "1",
+                        "img": "img/flutter.jpg",
+                        "about": "Suspendisse potenti. Vestibulum convallis, nunc quis sodales fringilla, est nulla porttitor odio, ut posuere lectus purus quis nisl. Curabitur vel purus vitae enim iaculis posuere. Donec vitae suscipit dolor. Mauris tempor varius sollicitudin. Aenean mattis, ligula quis porta maximus, justo ex posuere ipsum, ut commodo arcu mauris sed arcu. Pellentesque in imperdiet lacus. Pellentesque pretium blandit nulla, et mattis massa pellentesque in. Sed id vulputate dolor.",
+                        "audience": "18+",
+                        "duration": "eternity",
+                        "language": "Russian",
+                        "requirements": "Donec tellus ipsum, hendrerit in nulla et, ultrices accumsan elit. Donec sagittis erat id urna semper, sed aliquam dui ultrices. Nulla egestas accumsan libero, et varius odio euismod eu. Aenean iaculis lectus dui, ac tristique ligula euismod suscipit. Sed tincidunt, nisl nec viverra malesuada, purus leo ultricies ante, quis pulvinar justo augue eget arcu. Cras lorem odio, congue sit amet scelerisque suscipit, aliquam id urna. Donec nec porttitor lorem, nec dapibus dolor. "
+                    }
+                ],
+                "__collections__": {}
             }
         }
     }
-        }
+}

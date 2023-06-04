@@ -14,7 +14,7 @@ Column detailBody(List<categoryModel> categories, BuildContext context) {
     children: [
       buildActionBar('Discovery'),
       const SizedBox(height: kSpace),
-      buildSearchRow(),
+      // buildSearchRow(),
       const SizedBox(height: kSpace),
       section('Categories'),
       const SizedBox(height: kSpace),
