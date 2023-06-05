@@ -63,7 +63,7 @@ class _CatalogPageState extends State<CatalogPage>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(top: 50.0),
+        padding: const EdgeInsets.only(top: 60.0),
         child: ListView(
           padding: EdgeInsets.only(left: 10.0),
           children: <Widget>[

@@ -81,7 +81,7 @@ class _SignUpState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.white,
       body: SafeArea(
           child: Center(
         child: SingleChildScrollView(
@@ -114,7 +114,7 @@ class _SignUpState extends State<SignUpPage> {
                   // },
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: AppColors.accentColor1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
@@ -134,7 +134,7 @@ class _SignUpState extends State<SignUpPage> {
                     controller: _emailController,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: BorderSide(color: AppColors.accentColor1),
                           borderRadius: BorderRadius.circular(12)),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: AppColors.mainColor),

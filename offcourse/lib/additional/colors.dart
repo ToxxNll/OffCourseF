@@ -9,6 +9,11 @@ class AppColors {
   static final Color accentColor1 = Color(0xFFB8DFF4);
   static final Color accentColor2 = Color(0xFF333333);
   static final Color offWhite = Color(0xFFF5F5F5);
+  static final Gradient gradient = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0xFFB8DFF4), white],
+  );
 }
 // Primary Color:
 

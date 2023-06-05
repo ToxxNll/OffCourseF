@@ -23,16 +23,6 @@
                         }
                     },
                     "category": {
-                        "Language": {
-                            "category_courses": [
-                                "0",
-                                "1",
-                                "3"
-                            ],
-                            "img": "img/javascript.jpg",
-                            "name": "Language",
-                            "__collections__": {}
-                        },
                         "Geography": {
                             "category_courses": [
                                 "2",
@@ -43,7 +33,49 @@
                             "name": "Geography",
                             "__collections__": {}
                         },
+                        "Language": {
+                            "category_courses": [
+                                "0",
+                                "1",
+                                "3"
+                            ],
+                            "img": "img/javascript.jpg",
+                            "name": "Language",
+                            "__collections__": {}
+                        },
                         "Programming": {
+                            "category_courses": [
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9"
+                            ],
+                            "img": "img/spring.jpg",
+                            "name": "Programming",
+                            "__collections__": {}
+                        },
+                        "SdAVZiIAV6vjCWuw3Jlb": {
+                            "category_courses": [
+                                "0",
+                                "1",
+                                "3"
+                            ],
+                            "img": "img/javascript.jpg",
+                            "name": "Language",
+                            "__collections__": {}
+                        },
+                        "gvHO7qQjoY18D5cpgaNA": {
+                            "category_courses": [
+                                "2",
+                                "4",
+                                "10"
+                            ],
+                            "img": "img/flutter.jpg",
+                            "name": "Geography",
+                            "__collections__": {}
+                        },
+                        "zjpbeAt4i8G8NYmXIRus": {
                             "name": "Programming",
                             "category_courses": [
                                 "5",
@@ -220,7 +252,6 @@
                 "__collections__": {}
             },
             "1": {
-                "name ": "Beisekov Aslan",
                 "info": "Donec tortor diam, tempor non lobortis nec, tristique sed leo. Integer commodo erat a odio posuere, ultricies consequat nisi aliquam. Aliquam ut tempus turpis. Cras commodo ut nunc vitae sollicitudin. Ut consequat iaculis risus ut sodales. Suspendisse et urna erat. Vestibulum convallis tristique est ac congue.",
                 "name": "Beisekov Aslan",
                 "__collections__": {}
