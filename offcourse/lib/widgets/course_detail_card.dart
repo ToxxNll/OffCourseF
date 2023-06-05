@@ -35,7 +35,7 @@ class detailLine extends StatelessWidget {
           ),
           child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const SizedBox(
-              width: 15,
+              width: 10,
             ),
             Icon(
               icon, // Replace with the desired icon

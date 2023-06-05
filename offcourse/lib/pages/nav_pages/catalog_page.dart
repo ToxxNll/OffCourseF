@@ -47,7 +47,7 @@ class _CatalogPageState extends State<CatalogPage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
     courseFuture = CourseController2().getCourses();
     categoryFuture = CategoryController().getCategories();
   }

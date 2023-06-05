@@ -3,8 +3,8 @@ import 'package:offcourse/additional/colors.dart';
 import 'package:offcourse/models/course2.dart';
 import 'package:offcourse/uiTestFiles/components/constant.dart';
 import 'package:offcourse/uiTestFiles/models/Product.dart';
-import 'package:offcourse/uiTestFiles/components/_star_rating.dart'
-    show showStarRating;
+// import 'package:offcourse/uiTestFiles/components/_star_rating.dart'
+//     show showStarRating;
 
 buildCard(CourseModel2 course) {
   return IntrinsicHeight(

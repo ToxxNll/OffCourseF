@@ -11,7 +11,7 @@ Row buildRowPriceRating(product) {
             fontWeight: FontWeight.bold,
             color: Colors.white,
           )),
-      showStarRating(3.0, Colors.white)
+      // showStarRating(3.0, Colors.white)
     ],
   );
 }

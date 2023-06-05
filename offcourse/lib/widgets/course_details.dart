@@ -244,53 +244,6 @@ class CourseDetail extends StatelessWidget {
                 text2: requirements,
                 icon: Icons.short_text,
               ),
-              // IntrinsicHeight(
-              //     child: Container(
-              //   padding: const EdgeInsets.only(
-              //     left: 15.0,
-              //     right: 15.0,
-              //   ),
-              //   child: Container(
-              //     width: MediaQuery.of(context).size.width,
-              //     padding: const EdgeInsets.only(
-              //       left: 15.0,
-              //       right: 15.0,
-              //     ),
-              //     decoration: BoxDecoration(
-              //       color: AppColors.offWhite,
-              //       borderRadius: BorderRadius.circular(12.5),
-              //       boxShadow: [
-              //         BoxShadow(
-              //             offset: const Offset(10, 20),
-              //             blurRadius: 10,
-              //             spreadRadius: 0,
-              //             color: AppColors.accentColor2.withOpacity(.05)),
-              //       ],
-              //     ),
-              //     child: Column(
-              //       children: [
-              //         const SizedBox(
-              //           width: 15,
-              //         ),
-              //         const Text(
-              //           'Requirements',
-              //           textAlign: TextAlign.start,
-              //           style: TextStyle(
-              //               color: Colors.black87,
-              //               fontWeight: FontWeight.w900,
-              //               fontSize: 18),
-              //         ),
-              //         SizedBox(height: 5.0),
-              //         Text(requirements,
-              //             textAlign: TextAlign.start,
-              //             style: TextStyle(
-              //                 fontFamily: 'Varela',
-              //                 fontSize: 18.0,
-              //                 color: AppColors.black)),
-              //       ],
-              //     ),
-              //   ),
-              // )),
               SizedBox(height: 5.0),
               detailLine(
                 text1: 'Duration',

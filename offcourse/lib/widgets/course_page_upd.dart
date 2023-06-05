@@ -47,6 +47,7 @@ class _CoursePageUPDState extends State<CoursePageUPD> {
           ),
           Expanded(
             child: ListView.builder(
+              padding: EdgeInsets.only(top: 5.0, bottom: 0),
               itemCount: widget.courses.length,
               itemBuilder: (context, index) {
                 CourseModel2 course = widget.courses[index];
@@ -82,8 +83,8 @@ class _CoursePageUPDState extends State<CoursePageUPD> {
     String duration,
     context,
   ) {
-    return Padding(
-      padding: EdgeInsets.all(10.0),
+    return Container(
+      padding: EdgeInsets.only(top: 0.0, bottom: 10.0, left: 5.0, right: 5.0),
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(
