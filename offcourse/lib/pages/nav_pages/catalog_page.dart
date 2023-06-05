@@ -63,130 +63,129 @@ class _CatalogPageState extends State<CatalogPage>
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-      padding: const EdgeInsets.only(top: 10.0),
-      child: NestedScrollView(
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            SliverAppBar(
-              backgroundColor: AppColors.white,
-              title: Text(
-                'Catalog',
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.black),
+            padding: const EdgeInsets.only(top: 10.0),
+            child: CustomScrollView(slivers: [
+              SliverAppBar(
+                backgroundColor: AppColors.white,
+                title: Text(
+                  'Catalog',
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.black),
+                ),
+                pinned: true,
+                floating: true,
+                // Add any other SliverAppBar properties as needed
               ),
-              pinned: true,
-              floating: true,
-              // Add any other SliverAppBar properties as needed
-            ),
-            SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(height: kSpace),
-                  SearchField(
-                    searchController: searchController,
-                    onSearchTextChanged: _filterCoursesAndCategories,
-                  ),
-                  const SizedBox(height: kSpace),
-                  TabBar(
+              SliverToBoxAdapter(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: kSpace),
+                    SearchField(
+                      searchController: searchController,
+                      onSearchTextChanged: _filterCoursesAndCategories,
+                    ),
+                    const SizedBox(height: kSpace),
+                    TabBar(
+                      controller: _tabController,
+                      indicatorColor: Colors.transparent,
+                      labelColor: AppColors.mainColor,
+                      isScrollable: false,
+                      labelPadding: EdgeInsets.only(right: 45.0),
+                      unselectedLabelColor: Color(0xFFCDCDCD),
+                      tabs: [
+                        Tab(
+                          child: Text(
+                            'Catalog',
+                            style: TextStyle(
+                              fontFamily: 'Varela',
+                              fontSize: 21.0,
+                            ),
+                          ),
+                        ),
+                        Tab(
+                          child: Text(
+                            'Categories',
+                            style: TextStyle(
+                              fontFamily: 'Varela',
+                              fontSize: 21.0,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SliverFillRemaining(
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: double.infinity,
+                  child: TabBarView(
                     controller: _tabController,
-                    indicatorColor: Colors.transparent,
-                    labelColor: AppColors.mainColor,
-                    isScrollable: false,
-                    labelPadding: EdgeInsets.only(right: 45.0),
-                    unselectedLabelColor: Color(0xFFCDCDCD),
-                    tabs: [
-                      Tab(
-                        child: Text(
-                          'Catalog',
-                          style: TextStyle(
-                            fontFamily: 'Varela',
-                            fontSize: 21.0,
-                          ),
-                        ),
+                    children: [
+                      FutureBuilder<List<CourseModel2>>(
+                        future: courseFuture,
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            List<CourseModel2> courses = snapshot.data!;
+                            List<CourseModel2> filteredCourses = courses;
+                            if (searchController.text.isNotEmpty) {
+                              filteredCourses = courses.where((course) {
+                                final title = course.name.toLowerCase();
+                                final author = course.duration.toLowerCase();
+                                final searchQuery =
+                                    searchController.text.toLowerCase();
+                                return title.contains(searchQuery) ||
+                                    author.contains(searchQuery);
+                              }).toList();
+                            }
+                            print(filteredCourses.runtimeType);
+                            return CoursePageUPD(
+                              searchController: searchController,
+                              courses: filteredCourses,
+                            );
+                          } else if (snapshot.hasError) {
+                            return Text('Error: ${snapshot.error}');
+                          } else {
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+                        },
                       ),
-                      Tab(
-                        child: Text(
-                          'Categories',
-                          style: TextStyle(
-                            fontFamily: 'Varela',
-                            fontSize: 21.0,
-                          ),
-                        ),
+                      FutureBuilder<List<categoryModel>>(
+                        future: categoryFuture,
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            List<categoryModel> categories = snapshot.data!;
+                            List<categoryModel> filteredCategories = categories;
+                            if (searchController.text.isNotEmpty) {
+                              filteredCategories = categories.where((category) {
+                                final title = category.name.toLowerCase();
+                                final searchQuery =
+                                    searchController.text.toLowerCase();
+                                return title.contains(searchQuery);
+                              }).toList();
+                            }
+                            return CategoryPage(
+                                categories: filteredCategories,
+                                searchController: searchController);
+                          } else if (snapshot.hasError) {
+                            return Text('Error: ${snapshot.error}');
+                          } else {
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
+                        },
                       ),
                     ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ];
-        },
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: double.infinity,
-          child: TabBarView(
-            controller: _tabController,
-            children: [
-              FutureBuilder<List<CourseModel2>>(
-                future: courseFuture,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    List<CourseModel2> courses = snapshot.data!;
-                    List<CourseModel2> filteredCourses = courses;
-                    if (searchController.text.isNotEmpty) {
-                      filteredCourses = courses.where((course) {
-                        final title = course.name.toLowerCase();
-                        final author = course.duration.toLowerCase();
-                        final searchQuery = searchController.text.toLowerCase();
-                        return title.contains(searchQuery) ||
-                            author.contains(searchQuery);
-                      }).toList();
-                    }
-                    print(filteredCourses.runtimeType);
-                    return CoursePageUPD(
-                      searchController: searchController,
-                      courses: filteredCourses,
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text('Error: ${snapshot.error}');
-                  } else {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                },
-              ),
-              FutureBuilder<List<categoryModel>>(
-                future: categoryFuture,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    List<categoryModel> categories = snapshot.data!;
-                    List<categoryModel> filteredCategories = categories;
-                    if (searchController.text.isNotEmpty) {
-                      filteredCategories = categories.where((category) {
-                        final title = category.name.toLowerCase();
-                        final searchQuery = searchController.text.toLowerCase();
-                        return title.contains(searchQuery);
-                      }).toList();
-                    }
-                    return CategoryPage(
-                        categories: filteredCategories,
-                        searchController: searchController);
-                  } else if (snapshot.hasError) {
-                    return Text('Error: ${snapshot.error}');
-                  } else {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-    ));
+            ])));
   }
 }
